@@ -2,10 +2,12 @@ NAME 		= megaphone
 
 SRC 		= megaphone.cpp
 
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+
 all:		$(NAME)
 
 $(NAME):	$(SRC)
-				c++ -o $(NAME) $(SRC)
+				c++ $(CPPFLAGS) -o $(NAME) $(SRC)
 clean:
 				rm -f $(NAME)
 fclean:		clean
