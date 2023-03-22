@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:09:08 by vipereir          #+#    #+#             */
-/*   Updated: 2023/03/22 11:21:30 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:28:11 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ class Sample {
 
 public:
 
+	int		foo;
+
 	Sample(void);
 	~Sample(void);
+
+	void	bar(void);
 
 };
 
