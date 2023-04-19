@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cctype>
+#include <string>
 
 void  print_upper(char *str)
 {
-	int   i = 0;   
+	std::string msg (str);
 
- 	while (str[i])
-    std::cout << (char) toupper(str[i++]);
+  for(std::string::iterator it = msg.begin(); it < msg.end(); it++)
+      std::cout << (char) toupper(*it);
 }
 
 int main (int argc, char *argv[])
