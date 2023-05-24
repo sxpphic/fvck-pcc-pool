@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 09:26:01 by vipereir          #+#    #+#             */
-/*   Updated: 2023/05/24 09:42:10 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:07:23 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ class Contact {
     public:
         Contact(void);
         ~Contact(void);
+        void setFirstName(void);
+        void getFirstName(void);
     private:
-        std::string FirstName;
-        std::string LastName;
-        std::string NickName;
-        std::string PhoneNumber;
-        std::string DarkestSecret;
+        std::string _FirstName;
+        std::string _LastName;
+        std::string _NickName;
+        std::string _PhoneNumber;
+        std::string _DarkestSecret;
 };
 #endif
