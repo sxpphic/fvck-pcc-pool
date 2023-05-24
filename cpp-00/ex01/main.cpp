@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 09:00:23 by vipereir          #+#    #+#             */
-/*   Updated: 2023/05/24 16:56:23 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/05/24 20:28:57 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int main (void)
     skull();  
     while (666)
     {
-        std::cin.clear();
-        std::cin >> Command; // ctrl D da ruim, n sei pq.
+        std::getline(std::cin, Command); // ctrl D da ruim, n sei pq.
+      //  if (std::cin.eof())
+      //      exit(0); // exit nao chama os destructors
         if (Command == "ADD") 
             DevilsPhoneBook.AddContact();
         else if (Command == "SEARCH")
@@ -32,11 +33,7 @@ int main (void)
             return (0);
         }
         else
-        {
             std::cout << "not a command 💀" << std::endl; 
-            std::cin.clear(); // n funciona
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
     }
     return (0);
 }

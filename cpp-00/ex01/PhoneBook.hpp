@@ -6,17 +6,14 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 09:01:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/05/24 16:48:51 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/05/24 19:55:39 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include <iostream>
 # include "Contact.hpp"
-# include <limits>
-# include <ios>
 
 class PhoneBook {
 	public:

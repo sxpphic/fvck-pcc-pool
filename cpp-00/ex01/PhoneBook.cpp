@@ -43,26 +43,49 @@ void PhoneBook::AddContact(void)
 	return ;
 }
 
+bool	is_nubmer(std::string number)
+{
+	for (std::string::iterator i = number.begin(); i < number.end(); i++)
+		if (!isdigit(*i))
+			return (false);
+	return (true);
+}
+
+/* int fake_toi(std::string number)
+{
+	int nb;
+
+	nb = 0;
+
+} */
+
 void PhoneBook::SearchContact(void)
 {
-	int input;
-	std::cout << "|   index  |   name   |   last   |   nick   |" << std::endl;
+	std::string input;
+
+	if (this->contacts_number == 0)
+	{
+		std::cout << "no contacts to search 😞" << std::endl;
+		return ;
+	}
+
+	std::cout << "|" << std::setw(10) << "index" << "|" << std::setw(10) << "first name" << "|" << std::setw(10) << "last name" << "|" << std::setw(10) << "nick name" << "|" << std::endl;
 	for (int i = 0; i < this->contacts_number; i++)
 	{
-		std::cout << "|     ";
-		std::cout << i;
-		std::cout << "    |";
-		std::cout << this->_ContactList[i].getFirstName();
 		std::cout << "|";
-		std::cout << this->_ContactList[i].getLastName();
+		std::cout << std::setw(10) << i;
 		std::cout << "|";
-		std::cout << this->_ContactList[i].getNickName();
+		std::cout << std::setw(10) << this->_ContactList[i].getFirstName();
+		std::cout << "|";
+		std::cout << std::setw(10) << this->_ContactList[i].getLastName();
+		std::cout << "|";
+		std::cout << std::setw(10) << this->_ContactList[i].getNickName();
 		std::cout << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "select index: ";
-	std::cin >> input;
-	if (input > this->contacts_number)
-		input = this->contacts_number;
+	while (is_nubmer(input))
+		std::cin >> input;
+
 	std::cout << input << std::endl;
 }
