@@ -2,7 +2,8 @@ NAME 		= DevilsPhonebook
 
 SRC 		= main.cpp 			\
 			  PhoneBook.cpp     \
-			  Contact.cpp     \
+			  Contact.cpp		\
+			  skull.cpp			\
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 

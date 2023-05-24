@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 09:01:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/05/24 09:47:11 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/05/24 11:34:10 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 
 class PhoneBook {
 	public:
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook(void);
+		~PhoneBook(void);
+		void AddContact(void);
 	private:
 		Contact	_ContactList[8];
 };
+
+void	skull(void);
 
 #endif // !PHONEBOOK_H
