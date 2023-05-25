@@ -14,14 +14,26 @@
 
 
 Contact::Contact(void) {
-  //std::cout << "contact constructor 🏗️" << std::endl;
 }
 
 Contact::~Contact(void) {
- // std::cout << "contact destructor 💣💀" << std::endl;
 }
 
 std::string try_set(std::string msg)
+{
+	std::string buf;
+
+	while (buf.empty())
+	{
+		std::cout << msg;
+		std::getline(std::cin, buf);
+		if (std::cin.eof())
+			exit (0);
+	}
+	return (buf);
+}
+
+std::string try_set_number(std::string msg)
 {
 	std::string buf;
 
@@ -30,6 +42,11 @@ std::string try_set(std::string msg)
 	{
 		std::cout << msg;
 		std::getline(std::cin, buf);
+		if (!is_nubmer(buf))
+		{
+			std::cout << "numbers only 🔢 !!!" << std::endl;
+			buf.clear();
+		}
 		if (std::cin.eof())
 			exit (0);
 	}
@@ -44,7 +61,7 @@ void	Contact::setFirstName(void)
 
 void	Contact::setLastName(void)
 {
-	this->_LastName = try_set("Last Name 🫥: ");
+	this->_LastName = try_set("Last Name 👨‍👩‍👧‍👦: ");
 	return ;
 }
 
@@ -56,7 +73,7 @@ void	Contact::setNickName(void)
 
 void	Contact::setPhoneNumber(void)
 {
-	this->_PhoneNumber = try_set("Phone Number 📞: ");
+	this->_PhoneNumber = try_set_number("Phone Number 📞: ");
 	return ;
 }
 
@@ -71,7 +88,7 @@ std::string	format_string(std::string to_format)
 	if (to_format.size() > 10)
 	{
 		to_format.resize(9);
-		to_format.append("."); // += 
+		to_format.append(".");
 	}
 	return (to_format);
 }
@@ -93,5 +110,5 @@ std::string	Contact::getNickName(void)
 
 std::string	Contact::getPhoneNumber(void)
 {
-	return (format_string(this->_PhoneNumber));
+	return (this->_PhoneNumber);
 }

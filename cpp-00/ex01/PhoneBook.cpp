@@ -17,13 +17,11 @@ int PhoneBook::contacts_number = 0;
 
 PhoneBook::PhoneBook(void)
 {
-  //std::cout << "phonebook constructor 🏗️" << std::endl;
   return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-//  std::cout << "phonebook destructor 💣💀" << std::endl;
   return ;
 }
 
@@ -45,19 +43,37 @@ void PhoneBook::AddContact(void)
 
 bool	is_nubmer(std::string number)
 {
-	for (std::string::iterator i = number.begin(); i < number.end(); i++)
+	std::string::iterator i = number.begin();
+
+	if (i == number.end())
+		return (false);
+	if (*number.begin() == '-' || *number.begin() == '+')
+		i++;
+	while (i < number.end())
+	{
 		if (!isdigit(*i))
 			return (false);
+		i++;
+	}
 	return (true);
 }
 
-/* int fake_toi(std::string number)
+int fake_toi(std::string number)
 {
-	int nb;
+	std::string::iterator i = number.begin();
+	int nb = 0;
 
-	nb = 0;
-
-} */
+	while (i < number.end())
+	{
+		nb += *i - 48;
+		if (i < number.end() - 1)
+			nb *= 10;
+		i++;
+	}
+	if (*number.begin() == '-')
+		return (nb * -1);
+	return (nb);
+}
 
 void PhoneBook::SearchContact(void)
 {
@@ -68,10 +84,11 @@ void PhoneBook::SearchContact(void)
 		std::cout << "no contacts to search 😞" << std::endl;
 		return ;
 	}
-
+	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|" << std::setw(10) << "index" << "|" << std::setw(10) << "first name" << "|" << std::setw(10) << "last name" << "|" << std::setw(10) << "nick name" << "|" << std::endl;
 	for (int i = 0; i < this->contacts_number; i++)
 	{
+		std::cout << "---------------------------------------------" << std::endl;
 		std::cout << "|";
 		std::cout << std::setw(10) << i;
 		std::cout << "|";
@@ -83,9 +100,20 @@ void PhoneBook::SearchContact(void)
 		std::cout << "|";
 		std::cout << std::endl;
 	}
-	std::cout << "select index: ";
-	while (is_nubmer(input))
-		std::cin >> input;
+	std::cout << "---------------------------------------------" << std::endl;
 
-	std::cout << input << std::endl;
-}
+	while (666)
+	{
+		std::cout << "select index: ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit(0);
+		if (!is_nubmer(input))
+			std::cout << "numbers only 🔢 !!!" << std::endl;
+		else if (fake_toi(input) > this->contacts_number - 1 || fake_toi(input) < 0)
+			std::cout << "numbers too large 😮 or too small 🤏 " << std::endl;
+		else
+			break ;
+	}
+	std::cout << "CONTACT NUMBER 📇: " << this->_ContactList[fake_toi(input)].getPhoneNumber() << std::endl;
+	}
