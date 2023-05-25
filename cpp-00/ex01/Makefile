@@ -4,6 +4,7 @@ SRC 		= main.cpp 			\
 			  PhoneBook.cpp     \
 			  Contact.cpp		\
 			  skull.cpp			\
+			  utils.cpp			\
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 

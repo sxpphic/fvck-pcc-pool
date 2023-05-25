@@ -15,19 +15,16 @@
 int PhoneBook::it = 0;
 int PhoneBook::contacts_number = 0;
 
-PhoneBook::PhoneBook(void)
-{
+PhoneBook::PhoneBook(void) {
   return ;
 }
 
-PhoneBook::~PhoneBook(void)
-{
+PhoneBook::~PhoneBook(void) {
   return ;
 }
 
 void PhoneBook::AddContact(void)
 {
-	
 	if (this->it == 8)
 		this->it = 0;  
 	this->_ContactList[this->it].setFirstName();
@@ -35,44 +32,11 @@ void PhoneBook::AddContact(void)
 	this->_ContactList[this->it].setNickName();
 	this->_ContactList[this->it].setPhoneNumber();
 	this->_ContactList[this->it].setDarkestSecret();
+	std::cout << "thx!" << std::endl;
 	if (this->contacts_number < 8)
 		this->contacts_number++;
 	this->it++;
 	return ;
-}
-
-bool	is_nubmer(std::string number)
-{
-	std::string::iterator i = number.begin();
-
-	if (i == number.end())
-		return (false);
-	if (*number.begin() == '-' || *number.begin() == '+')
-		i++;
-	while (i < number.end())
-	{
-		if (!isdigit(*i))
-			return (false);
-		i++;
-	}
-	return (true);
-}
-
-int fake_toi(std::string number)
-{
-	std::string::iterator i = number.begin();
-	int nb = 0;
-
-	while (i < number.end())
-	{
-		nb += *i - 48;
-		if (i < number.end() - 1)
-			nb *= 10;
-		i++;
-	}
-	if (*number.begin() == '-')
-		return (nb * -1);
-	return (nb);
 }
 
 void PhoneBook::SearchContact(void)
@@ -92,16 +56,15 @@ void PhoneBook::SearchContact(void)
 		std::cout << "|";
 		std::cout << std::setw(10) << i;
 		std::cout << "|";
-		std::cout << std::setw(10) << this->_ContactList[i].getFirstName();
+		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
 		std::cout << "|";
-		std::cout << std::setw(10) << this->_ContactList[i].getLastName();
+		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
 		std::cout << "|";
-		std::cout << std::setw(10) << this->_ContactList[i].getNickName();
+		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
 		std::cout << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
-
 	while (666)
 	{
 		std::cout << "select index: ";
@@ -115,5 +78,10 @@ void PhoneBook::SearchContact(void)
 		else
 			break ;
 	}
-	std::cout << "CONTACT NUMBER 📇: " << this->_ContactList[fake_toi(input)].getPhoneNumber() << std::endl;
-	}
+	int contact_index = fake_toi(input);
+	std::cout << "FIRST NAME 😇: " << this->_ContactList[contact_index].getFirstName() << std::endl;
+	std::cout << "LAST NAME 👺: " << this->_ContactList[contact_index].getLastName() << std::endl;
+	std::cout << "NICK NAME 👤: " << this->_ContactList[contact_index].getNickName() << std::endl;
+	std::cout << "CONTACT NUMBER 📇: " << this->_ContactList[contact_index].getPhoneNumber() << std::endl;
+	std::cout << "DARKEST SECRET 🚔: " << this->_ContactList[contact_index].getDarkestSecret() << std::endl;
+}

@@ -14,44 +14,15 @@
 
 
 Contact::Contact(void) {
+	return ;
 }
 
 Contact::~Contact(void) {
+	return ;
 }
 
-std::string try_set(std::string msg)
-{
-	std::string buf;
 
-	while (buf.empty())
-	{
-		std::cout << msg;
-		std::getline(std::cin, buf);
-		if (std::cin.eof())
-			exit (0);
-	}
-	return (buf);
-}
 
-std::string try_set_number(std::string msg)
-{
-	std::string buf;
-
-//	std::getline(std::cin, buf);
-	while (buf.empty())
-	{
-		std::cout << msg;
-		std::getline(std::cin, buf);
-		if (!is_nubmer(buf))
-		{
-			std::cout << "numbers only 🔢 !!!" << std::endl;
-			buf.clear();
-		}
-		if (std::cin.eof())
-			exit (0);
-	}
-	return (buf);
-}
 
 void	Contact::setFirstName(void)
 {
@@ -61,7 +32,7 @@ void	Contact::setFirstName(void)
 
 void	Contact::setLastName(void)
 {
-	this->_LastName = try_set("Last Name 👨‍👩‍👧‍👦: ");
+	this->_LastName = try_set("Last Name 🙃: ");
 	return ;
 }
 
@@ -79,7 +50,7 @@ void	Contact::setPhoneNumber(void)
 
 void	Contact::setDarkestSecret(void)
 {
-	this->_DarkestSecret = try_set("Darkest Secret 😮🤫: ");
+	this->_DarkestSecret = try_set("Darkest Secret 😮: ");
 	return ;
 }
 
@@ -95,20 +66,25 @@ std::string	format_string(std::string to_format)
 
 std::string	Contact::getFirstName(void)
 {
-	return (format_string(this->_FirstName));
+	return (this->_FirstName);
 }
 
 std::string	Contact::getLastName(void)
 {
-	return (format_string(this->_LastName));
+	return (this->_LastName);
 }
 
 std::string	Contact::getNickName(void)
 {
-	return (format_string(this->_NickName));
+	return (this->_NickName);
 }
 
 std::string	Contact::getPhoneNumber(void)
 {
 	return (this->_PhoneNumber);
+}
+
+std::string	Contact::getDarkestSecret(void)
+{
+	return (this->_DarkestSecret);
 }
