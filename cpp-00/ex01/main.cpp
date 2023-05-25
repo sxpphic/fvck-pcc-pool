@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 09:00:23 by vipereir          #+#    #+#             */
-/*   Updated: 2023/05/25 10:28:08 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/05/25 14:40:38 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main (void)
     skull();  
     while (666)
     {
+        std::cout << ">";
         std::getline(std::cin, Command);
         if (std::cin.eof())
             return (0);

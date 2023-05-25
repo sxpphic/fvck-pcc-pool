@@ -58,9 +58,9 @@ void PhoneBook::SearchContact(void)
 		std::cout << "|";
 		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
 		std::cout << "|";
-		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
+		std::cout << std::setw(10) << format_string(this->_ContactList[i].getLastName());
 		std::cout << "|";
-		std::cout << std::setw(10) << format_string(this->_ContactList[i].getFirstName());
+		std::cout << std::setw(10) << format_string(this->_ContactList[i].getNickName());
 		std::cout << "|";
 		std::cout << std::endl;
 	}
