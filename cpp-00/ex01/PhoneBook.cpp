@@ -79,9 +79,11 @@ void PhoneBook::SearchContact(void)
 			break ;
 	}
 	int contact_index = fake_toi(input);
+	std::cout << "- - - - - - - - - - - - - - - -" << std::endl;
 	std::cout << "FIRST NAME 😇: " << this->_ContactList[contact_index].getFirstName() << std::endl;
 	std::cout << "LAST NAME 👺: " << this->_ContactList[contact_index].getLastName() << std::endl;
 	std::cout << "NICK NAME 👤: " << this->_ContactList[contact_index].getNickName() << std::endl;
 	std::cout << "CONTACT NUMBER 📇: " << this->_ContactList[contact_index].getPhoneNumber() << std::endl;
 	std::cout << "DARKEST SECRET 🚔: " << this->_ContactList[contact_index].getDarkestSecret() << std::endl;
+	std::cout << "- - - - - - - - - - - - - - - -" << std::endl;
 }
