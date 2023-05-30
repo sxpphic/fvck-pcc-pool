@@ -1,9 +1,6 @@
-NAME 		= The.Last.of.Us.S01E09.2160p.HMAX.WEB-DL.DDP5.1.Atmos.DV.MKV.x265-SMURF
+NAME 		= pointer_ref
 
 SRC 		= main.cpp			\
-			  randomChump.cpp	\
-			  Zombie.cpp		\
-			  newZombie.cpp		\
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
