@@ -1,6 +1,8 @@
-NAME 		= sample
+NAME 		= ZombieTsunami.apk
 
-SRC 		= sample.cpp
+SRC 		= main.cpp			\
+			  Zombie.cpp		\
+			  zombieHorde.cpp	\
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
