@@ -2,6 +2,8 @@
 magaphone
 phonebook
 
+settings.json
+
 # Prerequisites
 *.d
 
