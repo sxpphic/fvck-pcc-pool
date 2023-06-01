@@ -3,6 +3,7 @@ NAME 		= Unnecessary
 SRC 		=	main.cpp			\
 				Weapon.cpp			\
 				HumanA.cpp			\
+				HumanB.cpp			\
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 

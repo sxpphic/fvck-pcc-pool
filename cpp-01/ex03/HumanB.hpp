@@ -3,22 +3,22 @@
 
 # include <iostream>
 # include <string>
-
+# include "Weapon.hpp"
 class HumanB
 {
 
 	public:
 
 		HumanB();
-		HumanB( HumanB const & src );
+		HumanB(std::string name);
 		~HumanB();
-
-		HumanB &		operator=( HumanB const & rhs );
+		void		setWeapon(Weapon &weaponREF);
+		void		attack(void);
 
 	private:
+		std::string _name;
+		Weapon	*_myWeapon;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, HumanB const & i );
 
 #endif /* ********************************************************** HUMANB_H */

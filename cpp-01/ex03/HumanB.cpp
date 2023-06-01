@@ -6,10 +6,13 @@
 
 HumanB::HumanB()
 {
+	this->_myWeapon = NULL;
 }
 
-HumanB::HumanB( const HumanB & src )
+HumanB::HumanB(std::string name)
 {
+	this->_name = name;
+	this->_myWeapon = NULL;
 }
 
 
@@ -21,35 +24,28 @@ HumanB::~HumanB()
 {
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-HumanB &				HumanB::operator=( HumanB const & rhs )
-{
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, HumanB const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void		HumanB::attack(void)
+{
+	if (this->_myWeapon == NULL)
+	{
+		std::cout << "no weapon, looser 😹" << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " attacks with their " << this->_myWeapon->getType() << std:: endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+void	HumanB::setWeapon(Weapon &weaponREF)
+{
+	this->_myWeapon = &weaponREF;
+}
 
 
 /* ************************************************************************** */
