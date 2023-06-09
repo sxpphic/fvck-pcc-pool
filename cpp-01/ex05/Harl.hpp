@@ -11,14 +11,14 @@ class Harl
 
 		Harl();
 		~Harl();
-		void	complain(std::string level) const;
+		void	complain(std::string level);
 
 	private:
 
-		void	debug(void) const;
-		void	info(void) const;
-		void	warning(void) const;
-		void	error(void) const;
+		void	debug(void);
+		void	info(void) ;
+		void	warning(void) ;
+		void	error(void) ;
 
 };
 
