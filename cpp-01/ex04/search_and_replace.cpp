@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:23:10 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/06 13:25:12 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/09 10:18:40 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ static	void replace_line(std::ofstream &write_file, std::string line_buffer,
 void	search_and_replace(char **params)
 {
 	std::ifstream	read_file(params[1]);
-	std::ofstream	write_file("mudar_o_nome.replace"); // ((std::string)params[1]. ".replace"); voltar para isso no mac, no linux nao funfa
+	std::ofstream	write_file; // ((std::string)params[1]. ".replace"); voltar para isso no mac, no linux nao funfa
 	std::string		buffer;
+	std::string		file_replace_name;
+
+	file_replace_name = params[1];
+	file_replace_name.append(".replace");
+	write_file.open(file_replace_name);
 
 	if (read_file.is_open()) {	
 		while(std::getline(read_file, buffer)) {
