@@ -6,21 +6,22 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:50:37 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/06 15:22:55 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:22:36 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main (void)
+int	main (int argc, char **argv)
 {
-	std::string	input;
 	Harl		pearl;
-	
-	while (666)
-	{
-		std::getline(std::cin, input);
-		pearl.complain(input);
+
+	if (argc != 2) {
+		std::cout << "Wrong input 🛑" << std::endl;
+		return (0);
 	}
+	
+	std::string input(argv[1]);
+	pearl.complain(input);
 	return (0);
 }
