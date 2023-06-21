@@ -1,18 +1,19 @@
-NAME		=	Fixed
+
+NAME		=	fixed
 
 SRC			=	main.cpp	\
 				Fixed.cpp	\
 
-CCP			=	c++
+CC			=	c++
 
-CPPFLAGS	=	-Wall -Werror -Wextra -std=cpp98
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 RM			=	rm -f
 
 all:		$(NAME)
 
-(NAME):		$(SRC)
-			$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME) 
+$(NAME):	$(SRC)
+				$(CC) $(CPPFLAGS) $(SRC) -o $(NAME) 
 
 clean:		
 			$(RM) -r *.dSYM
