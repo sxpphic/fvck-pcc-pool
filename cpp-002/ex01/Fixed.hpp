@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:41 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/21 17:47:39 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:35:37 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed {
 
 	private:
 		int 				_fixed_point;
-		static const int	_fract_bits;
+		static const int	_fract_bits = 8;
 		
 };
 
