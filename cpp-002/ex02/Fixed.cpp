@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 09:26:07 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 09:28:04 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 	os << obj.toFloat();
 	return (os);
 }
+
+bool	Fixed::operator==(const Fixed& other) {
+	return (_fixed_point == other._fixed_point);
+}
+
 
 /* END OVERLOADS*/
 
