@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:41 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 09:27:11 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 10:38:26 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <cmath>
 # include <fstream>
+
 
 class Fixed {
 	
@@ -26,16 +27,27 @@ class Fixed {
 		Fixed& operator=(const Fixed& other);
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		bool	operator==(const Fixed& other);
+		bool	operator!=(const Fixed& other);
+		bool	operator>=(const Fixed& other);
+		bool	operator<=(const Fixed& other);
+		bool	operator>(const Fixed& other);
+		bool	operator<(const Fixed& other);
+		Fixed	operator+(const Fixed& other);
+		Fixed	operator-(const Fixed& other);
+		Fixed	operator*(const Fixed& other);
+		Fixed	operator/(const Fixed& other);
 		~Fixed();
-		int	getRawBits(void) const;
-		void setRawBits(int const raw);
+		int		getRawBits(void) const;
+		void 	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
 	private:
 		int 				_fixed_point;
-		static const int	_fract_bits = 8;
+		static int			_fract_bits;
 		
 };
+
+
 
 #endif
