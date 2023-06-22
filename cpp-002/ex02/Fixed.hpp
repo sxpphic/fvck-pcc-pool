@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:41 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 18:19:03 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 18:30:47 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ class Fixed {
 		~Fixed();
 		Fixed& operator=(const Fixed& other);
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-		bool	operator==(const Fixed& other);
-		bool	operator!=(const Fixed& other);
+		bool	operator==(const Fixed& other) const;
+		bool	operator!=(const Fixed& other) const;
 		bool	operator>=(const Fixed& other) const;
 		bool	operator<=(const Fixed& other) const;
-		bool	operator>(const Fixed& other);
-		bool	operator<(const Fixed& other);
-		Fixed	operator+(const Fixed& other);
-		Fixed	operator-(const Fixed& other);
-		Fixed	operator*(const Fixed& other);
-		Fixed	operator/(const Fixed& other);
+		bool	operator>(const Fixed& other) const;
+		bool	operator<(const Fixed& other) const;
+		Fixed	operator+(const Fixed& other) const;
+		Fixed	operator-(const Fixed& other) const;
+		Fixed	operator*(const Fixed& other) const;
+		Fixed	operator/(const Fixed& other) const;
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 		Fixed&	operator++();
