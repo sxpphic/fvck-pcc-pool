@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 10:41:23 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:17:42 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,39 @@ Fixed	Fixed::operator-(const Fixed& other) {
 Fixed	Fixed::operator*(const Fixed& other) {
 	Fixed	ret;
 	ret.setRawBits(_fixed_point * other._fixed_point);
-	//ret._fract_bits = _fract_bits *other._fract_bits;
+	ret._fract_bits = _fract_bits + other._fract_bits;
 	return (ret);
 }
 
 Fixed	Fixed::operator/(const Fixed& other) {
 	Fixed	ret;
 	ret.setRawBits(_fixed_point / other._fixed_point);
+	ret._fract_bits = _fract_bits - other._fract_bits;
 	return (ret);
 }
+
+Fixed	Fixed::operator++(int) {
+	Fixed temp(*this);
+	_fixed_point++;
+	return (temp);
+}
+
+Fixed	Fixed::operator--(int) {
+	Fixed temp(*this);
+	_fixed_point--;
+	return (temp);
+}
+
+Fixed&	Fixed::operator++() {
+	_fixed_point++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--() {
+	_fixed_point--;
+	return (*this);
+}
+
 
 
 /* END OVERLOADS*/
