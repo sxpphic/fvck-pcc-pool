@@ -6,26 +6,29 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 17:17:42 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 18:17:17 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 // constructor
-Fixed::Fixed() {
+Fixed::Fixed() : _fixed_point(0), _fract_bits(8) {
 	std::cout << "default constructor called 🏗️" << std::endl;
-	_fixed_point = 0;
+/* 	_fixed_point = 0;
+	_fract_bits = 8; */
 }
 
 // int constructor
-Fixed::Fixed(const int num) : _fixed_point(num * (1 << _fract_bits)) {
+Fixed::Fixed(const int num) :  _fract_bits(8) {
 	std::cout << "int constructor called 🔢" << std::endl;
+	_fixed_point = num * (1 << _fract_bits);
 }
 
 // float constructor
-Fixed::Fixed(const float num) : _fixed_point(roundf((num * (1 << _fract_bits)))) {
+Fixed::Fixed(const float num) : _fract_bits(8) {
 	std::cout << "float constructor called 🛟" << std::endl;
+	_fixed_point = roundf((num * (1 << _fract_bits)));
 }
 
 // copy
@@ -61,11 +64,11 @@ bool	Fixed::operator!=(const Fixed& other) {
 	return (_fixed_point != other._fixed_point);
 }
 
-bool	Fixed::operator>=(const Fixed& other) {
+bool	Fixed::operator>=(const Fixed& other) const{
 	return (_fixed_point >= other._fixed_point);
 }
 
-bool	Fixed::operator<=(const Fixed& other) {
+bool	Fixed::operator<=(const Fixed& other) const{
 	return (_fixed_point <= other._fixed_point);
 }
 
@@ -125,9 +128,23 @@ Fixed&	Fixed::operator--() {
 	return (*this);
 }
 
-
-
 /* END OVERLOADS*/
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b) {
+	return (a >= b ? a : b);
+}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b) {
+	return (a >= b ? a : b);
+}
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b) {
+	return (a <= b ? a : b);
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b) {
+	return (a <= b ? a : b);
+}
 
 // destructor
 Fixed::~Fixed() { std::cout << "destructor called 💣" << std::endl; }
