@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/21 19:45:21 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/22 09:04:24 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ Fixed& Fixed::operator=(const Fixed& other) {
 	return (*this);
 }
 
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+{
+	os << obj.toFloat();
+	return (os);
+}
+
 // destructor
 Fixed::~Fixed() { std::cout << "destructor called 💣" << std::endl; }
 
@@ -57,10 +63,10 @@ void	Fixed::setRawBits(int const raw) {
 	_fixed_point = raw;
 }
 
-float	Fixed::toFloat(void) {
+float	Fixed::toFloat(void) const {
 	return ((float)_fixed_point / (1 << _fract_bits));
 }
 
-int		Fixed::toInt(void) {
+int		Fixed::toInt(void) const {
 	return (_fixed_point / (1 << _fract_bits));
 }
