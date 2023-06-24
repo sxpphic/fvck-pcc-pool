@@ -15,15 +15,15 @@
 /* constructors */
 
 ClapTrap::ClapTrap() : _name("sem_nome"), _hit_points(10), _energy_points(10), _atack_damage(0) {
-	std::cout << "default constructor called 🏗️" << std::endl;
+	std::cout << "ClapTrap 🤖 default constructor called 🏗️" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name),_hit_points(10), _energy_points(10), _atack_damage(0) {
-	std::cout << "default constructor called 🏗️" << std::endl;
+	std::cout << "ClapTrap 🤖 default constructor called 🏗️" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap& other) {
-	std::cout << "copy constructor called ✂️" << std::endl;
+	std::cout << "ClapTrap 🤖 copy constructor called ✂️" << std::endl;
 	_name = other._name;
 	_hit_points = other._hit_points;
 	_energy_points = other._energy_points;
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(ClapTrap& other) {
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap& other) {	
-	std::cout << "copy assignment operator called 🟰" << std::endl;
+	std::cout << "ClapTrap 🤖 copy assignment operator called 🟰" << std::endl;
 	_name = other._name;
 	_hit_points = other._hit_points;
 	_energy_points = other._energy_points;
@@ -39,12 +39,15 @@ ClapTrap& ClapTrap::operator=(ClapTrap& other) {
 	return (*this);
 }
 
-ClapTrap::~ClapTrap() { std::cout << "destructor called 💣" << std::endl; }
+ClapTrap::~ClapTrap() { std::cout << "ClapTrap 🤖 destructor called 💣" << std::endl; }
 
 /* member functions*/
 
 bool	ClapTrap::_useEnergy() {
-	if (_energy_points <= 0) {
+	if (_hit_points <= 0) {
+		std::cout << "you're dead 💀" << std::endl;
+		return (false);
+	} else if (_energy_points <= 0) {
 		std::cout << "not enough energy points 🥵" << std::endl;
 		return (false);
 	} else {
