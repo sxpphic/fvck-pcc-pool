@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 10:33:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/24 11:54:05 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:32:59 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ ScavTrap::ScavTrap() {
 	_init();
 }
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(const std::string name) {
 	_init();
 	_name = name;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) { // n sei se entendi n
 	std::cout << "ScavTrap 🚜 copy constructor called ✂️" << std::endl;
-	_copy(other);
+	//_copy(other);
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
@@ -34,11 +34,18 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
 
 ScavTrap::~ScavTrap() { std::cout << "ScavTrap 🚜 destructor called 💣" << std::endl; }
 
+void	ScavTrap::attack(const std::string target) {
+	if (!_useEnergy())	
+		return ;
+	// if para os sem nome ???
+	std::cout << "ScavTrap 🚜 " << _name << " attacks 🤺 " << target << ", causing " << _atack_damage << " points of damage! 🩸" << std::endl;
+}
 
-
-
-
-
+void ScavTrap::guardGate() {
+	if (!_useEnergy())	
+		return ;
+	std::cout << "ScavTrap 🚜 " << _name << " is now in Gate 🚪 keeper 🔐 mode"  << std::endl;
+}
 
 
 
