@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 10:33:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/24 12:32:59 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/27 11:03:41 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ ScavTrap::ScavTrap(const std::string name) {
 	_name = name;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) { // n sei se entendi n
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
 	std::cout << "ScavTrap 🚜 copy constructor called ✂️" << std::endl;
-	//_copy(other);
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
