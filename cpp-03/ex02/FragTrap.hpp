@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:58:57 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/27 11:05:21 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:18:30 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRAG_TRAP_H
 #include "ClapTrap.hpp"
 
-class FragTrap : ClapTrap {
+class FragTrap : public ClapTrap {
 
 	public:
 		FragTrap();
@@ -22,13 +22,14 @@ class FragTrap : ClapTrap {
 		FragTrap(FragTrap& other);
 		FragTrap& operator=(FragTrap& other);
 		~FragTrap();
+		
+		void highFivesGuys(void);
 				
 	private:
 
 		void	_init();
 		void	_copy(const FragTrap& other);
 
-}
-
+};
 
 #endif
