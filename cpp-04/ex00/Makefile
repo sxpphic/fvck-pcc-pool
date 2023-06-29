@@ -1,9 +1,11 @@
 NAME		=	Polymorphism.exe
 
-SRC			=	main.cpp	\
-				Animal.cpp	\
-				Dog.cpp		\
-				Cat.cpp		\
+SRC			=	main.cpp		\
+				Animal.cpp		\
+				Dog.cpp			\
+				Cat.cpp			\
+				WrongAnimal.cpp	\
+				WrongCat.cpp	\
 
 CC			=	c++
 
@@ -22,6 +24,6 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
-re:			fclean re
+re:			fclean all
 
 .PHONY:		all clean fclean re

@@ -6,12 +6,13 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:56:14 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 12:29:37 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:46:26 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 
 int main (void)
