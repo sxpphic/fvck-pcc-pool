@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:26:43 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 15:23:04 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:35:33 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class	Cat : public Animal {
 		std::string getIdea(int x);
 
 	private:
-		int		a;
 		Brain* _my_brain;
 		
 };
