@@ -6,22 +6,22 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:58:56 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 15:47:46 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 09:25:26 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef AAnimal_H
+# define AAnimal_H
 # include <iostream>
 # include "Brain.hpp" 
 
-class	Animal {
+class	AAnimal {
 
 		public:
-			Animal();
-			Animal(const Animal& other);
-			Animal& operator=(const Animal& other);
-			virtual ~Animal();
+			AAnimal();
+			AAnimal(const AAnimal& other);
+			AAnimal& operator=(const AAnimal& other);
+			virtual ~AAnimal();
 
 			std::string getType() const;
 			virtual	void makeSound(void) const = 0;

@@ -6,15 +6,15 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:26:52 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 15:48:17 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 09:56:56 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_H
 # define DOG_H
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class	Dog : public Animal {
+class	Dog : public AAnimal {
 	
 	public:
 
@@ -27,7 +27,6 @@ class	Dog : public Animal {
 	private:
 
 		Brain* _my_brain;
-		
 		
 };
 

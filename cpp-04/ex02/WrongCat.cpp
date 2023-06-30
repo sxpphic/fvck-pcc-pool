@@ -17,7 +17,7 @@ WrongCat::WrongCat() {
 	type = "WrongCat 🐈";
 }
 
-WrongCat::WrongCat(const WrongCat& other) {
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
 	std::cout << "WrongCat 🐈 copy constructor 🏗️ called" << std::endl;
 	type = other.type;
 }

@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:56:14 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 15:52:51 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 09:57:05 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main (void)
 {
-	Animal* forest[50];
+/* 	AAnimal* forest[50];
 
 	for(int i = 0; i < 50; i++)
 	{
@@ -29,7 +29,7 @@ int main (void)
 
 	for (int i = 0; i < 50; i++)
 		delete forest[i];
-	return (0);	
+	return (0);	 */
 }
 
 

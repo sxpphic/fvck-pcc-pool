@@ -6,38 +6,32 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:58:41 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 15:46:12 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 09:25:19 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 // constructors
 
-Animal::Animal() {
-	std::cout << "Animal 🐯 constructor 🏗️ called" << std::endl;
-	type = "generic animal";
+AAnimal::AAnimal() {
+	std::cout << "AAnimal 🐯 constructor 🏗️ called" << std::endl;
+	type = "generic AAnimal";
 }
 
-Animal::Animal(const Animal& other) {
-	std::cout << "Animal 🐯 copy constructor 🏗️ called" << std::endl;
+AAnimal::AAnimal(const AAnimal& other) {
+	std::cout << "AAnimal 🐯 copy constructor 🏗️ called" << std::endl;
 	type = other.type;
 }
 
-Animal&	Animal::operator=(const Animal& other) {
-	std::cout << "Animal 🐯 assignment operator called" << std::endl;
+AAnimal&	AAnimal::operator=(const AAnimal& other) {
+	std::cout << "AAnimal 🐯 assignment operator called" << std::endl;
 	type = other.type;
 	return (*this);
 }
 
-Animal::~Animal() { std::cout << "Animal 🐯 destructor 💣 called" << std::endl; }
+AAnimal::~AAnimal() { std::cout << "AAnimal 🐯 destructor 💣 called" << std::endl; }
 
-std::string Animal::getType(void) const {
+std::string AAnimal::getType(void) const {
 	return (type);
 }
-
-/*
-void Animal::makeSound(void) const {
-	std::cout << "* generic animal sound *" << std::endl;
-}*/
-
