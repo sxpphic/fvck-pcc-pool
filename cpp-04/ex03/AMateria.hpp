@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:12:23 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 16:36:16 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:03:53 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
 	
 	public:
@@ -24,7 +26,7 @@ class AMateria {
 		AMateria(const std::string& type);
 		AMateria(const AMateria& other);
 		AMateria& operator=(const AMateria&other);
-		~AMateria();
+		virtual ~AMateria();
 
 		const std::string& getType(void) const;
 		virtual AMateria* clone() const = 0;

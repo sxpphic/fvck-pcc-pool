@@ -2,18 +2,14 @@ NAME		=	Irrational_Class
 
 SRC			=	main.cpp			\
 				AMateria.cpp		\
-				AMateria.hpp		\
-				ICharacter.hpp		\
 				Character.cpp		\
-				Character.hpp		\
-				IMateriaSource.hpp	\
 				MateriaSource.cpp	\
-				MateriaSource.hpp	\
-
+				Ice.cpp				\
+				Cure.cpp			\
 
 CC			=	c++
 
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+CPPFLAGS	= -Wall -Werror -Wextra -std=c++98 #-g -fsanitize=address
 
 RM			= rm -f
 

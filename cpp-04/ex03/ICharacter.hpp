@@ -6,13 +6,16 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:15:06 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 16:39:08 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:04:17 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef I_CHARACTER_H
 # define I_CHARACTER_H
+# include <string>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class	ICharacter {
 
