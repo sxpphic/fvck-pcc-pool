@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:26:48 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 16:28:58 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 10:02:08 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ Dog::Dog() {
 	_my_brain = new Brain;
 }
 
-Dog::Dog(const Dog& other) {
+Dog::Dog(const Dog& other) : Animal(other) {
 	std::cout << "Dog 🐶 copy constructor 🏗️ called" << std::endl;
 	_my_brain = new Brain(*other._my_brain);
-	type = other.type;
 }
 
 Dog::~Dog() {

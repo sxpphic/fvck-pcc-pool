@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:26:46 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 12:25:51 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 10:00:50 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Cat::Cat() {
 	type = "Cat 😺";
 }
 
-Cat::Cat(const Cat& other) {
+Cat::Cat(const Cat& other)  : Animal(other) {
 	std::cout << "Cat 😺 copy constructor 🏗️ called" << std::endl;
-	type = other.type;
 }
 
 Cat::~Cat() { std::cout << "Cat 😺 destructor 💣 called" << std::endl; }
