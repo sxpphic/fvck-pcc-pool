@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:12:30 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 10:59:52 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:36:29 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ AMateria& AMateria::operator=(const AMateria& other) {
 
 // member functions
 
-const std::string& AMateria::getType(void) {
+const std::string& AMateria::getType(void) const {
 	return (type);
 }
 

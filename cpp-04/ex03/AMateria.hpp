@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:12:23 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 12:33:10 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:36:16 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria {
 		AMateria& operator=(const AMateria&other);
 		~AMateria();
 
-		const std::string& getType(void);
+		const std::string& getType(void) const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 

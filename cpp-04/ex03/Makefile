@@ -1,6 +1,15 @@
 NAME		=	Irrational_Class
 
-SRC			=	main.cpp		\
+SRC			=	main.cpp			\
+				AMateria.cpp		\
+				AMateria.hpp		\
+				ICharacter.hpp		\
+				Character.cpp		\
+				Character.hpp		\
+				IMateriaSource.hpp	\
+				MateriaSource.cpp	\
+				MateriaSource.hpp	\
+
 
 CC			=	c++
 
