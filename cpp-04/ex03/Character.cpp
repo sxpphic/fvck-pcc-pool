@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:32:35 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 22:09:05 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/01 07:57:41 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,30 @@ Character::Character(const std::string& name) {
 Character::Character(const Character& other) {
 	_name = other._name;
 	for (int i = 0; i < 4; i++)
-		*_slot[i] = *other._slot[i];
+		_slot[i] = other._slot[i]->clone();
 }
 
 Character& Character::operator=(const Character& other) {
 	_name = other._name;
-	for (int i = 0; i < 4; i++)
-		*_slot[i] = *other._slot[i];
+	for (int i = 0; i < 4; i++) {
+		if (_slot[i])
+			delete _slot[i];
+	}
+	for (int i = 0; i < 4; i++) {
+		if (other._slot[i])
+			_slot[i] = other._slot[i]->clone();
+	}
 	return (*this);
 }
 
-Character::~Character() {}
+Character::~Character() {
+ 	for (int i = 0; i < 4; i++) {
+		if (_slot[i])  {
+			delete _slot[i];
+			_slot[i] = NULL;
+		}
+	} 
+}
 
 // methods
 

@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:32:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 22:04:04 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/01 08:04:56 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,21 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
 	for (int i = 0; i < 4; i++)
-		*_mat[i] = *other._mat[i];
+		_mat[i] = other._mat[i]->clone();
 }
 
 MateriaSource::~MateriaSource() {
-	for (int i = 0; i < 4; i++) {
-		if (_mat[i])
+ 	for (int i = 0; i < 4; i++) {
+		if (_mat[i])  {
 			delete _mat[i];
+			_mat[i] = NULL;
+		}
 	}
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 	for (int i = 0; i < 4; i++)
-		*_mat[i] = *other._mat[i];
+		_mat[i] = other._mat[i]->clone();
 	return (*this);
 }
 
@@ -45,12 +47,15 @@ void	MateriaSource::learnMateria(AMateria* m) {
 			return ;
 		}
 	}
+	// se não tiver slot, deleta a materia
+	std::cout << "Materia Source is full! DELETING the materia" << std::endl;
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
 	for (size_t i = 0; i < 4; i++) {
 		if (_mat[i] && _mat[i]->getType() == type)
-			return (_mat[i]);
+			return (_mat[i]->clone());
 	}
 	return (NULL);
 }
