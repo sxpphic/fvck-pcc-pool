@@ -6,15 +6,22 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:32:35 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 19:49:45 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 22:09:05 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() {}
+Character::Character() {
+	for (size_t i = 0; i < 4; i++) {
+		_slot[i] = NULL;
+	}
+}
 
 Character::Character(const std::string& name) {
+	for (size_t i = 0; i < 4; i++) {
+		_slot[i] = NULL;
+	}
 	_name = name;
 }
 
@@ -40,6 +47,8 @@ const std::string& Character::getName() const {
 }
 
 void	Character::equip(AMateria* m){
+	if (!m)
+		return ;
 	for (size_t i = 0; i < 4; i++) {
 		if (!_slot[i]) {
 			_slot[i] = m;

@@ -6,13 +6,13 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:33:53 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 20:05:03 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 21:53:41 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() { ; }
+Cure::Cure() { type = "cure"; }
 
 Cure::Cure(const Cure& other) : AMateria(other) {}
 

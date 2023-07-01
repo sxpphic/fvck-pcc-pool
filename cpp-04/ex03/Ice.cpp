@@ -6,13 +6,13 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:33:56 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 20:04:25 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/06/30 21:53:17 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() { ; }
+Ice::Ice() { type = "ice"; }
 
 Ice::Ice(const Ice& other) : AMateria(other) {}
 
