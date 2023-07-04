@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 18:40:15 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:47:37 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,21 @@ bool	Fixed::operator<(const Fixed& other) const {
 
 Fixed	Fixed::operator+(const Fixed& other) const {
 	Fixed	ret;
-	ret.setRawBits(_fixed_point + other._fixed_point);
-	ret._fract_bits = _fract_bits;
+	int		bigger_fract_bits;
+
+	bigger_fract_bits = _fract_bits > other._fract_bits ? _fract_bits : other._fract_bits;
+	ret.setRawBits(_fixed_point * (1 << (bigger_fract_bits - _fract_bits)) + other._fixed_point * (1 << (bigger_fract_bits - other._fract_bits))); // converter os frectinais bits
+	ret._fract_bits = bigger_fract_bits;
 	return (ret);
 }
 
 Fixed	Fixed::operator-(const Fixed& other) const {
 	Fixed	ret;
-	ret.setRawBits(_fixed_point - other._fixed_point);
-	ret._fract_bits = _fract_bits;
+	int		bigger_fract_bits;
+
+	bigger_fract_bits = _fract_bits > other._fract_bits ? _fract_bits : other._fract_bits;
+	ret.setRawBits(_fixed_point * (1 << (bigger_fract_bits - _fract_bits)) - other._fixed_point * (1 << (bigger_fract_bits - other._fract_bits))); // converter os frectinais bits
+	ret._fract_bits = bigger_fract_bits;
 	return (ret);
 }
 
@@ -103,6 +109,8 @@ Fixed	Fixed::operator/(const Fixed& other) const {
 	Fixed	ret;
 	ret.setRawBits(_fixed_point / other._fixed_point);
 	ret._fract_bits = _fract_bits - other._fract_bits;
+	if (ret._fract_bits < 0)
+		ret._fract_bits = 0;
 	return (ret);
 }
 

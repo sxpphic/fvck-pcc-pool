@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 13:34:28 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/22 18:43:00 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:50:27 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int	main (void)
 {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ));
+
 	std::cout << "add" << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
@@ -27,7 +27,5 @@ int	main (void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	
-	
 	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << a << std::endl;
 }
