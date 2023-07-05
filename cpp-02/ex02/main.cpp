@@ -6,13 +6,11 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 13:34:28 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/04 11:50:27 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:56:51 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-//int Fixed::_fract_bits = 8;
 
 int	main (void)
 {
