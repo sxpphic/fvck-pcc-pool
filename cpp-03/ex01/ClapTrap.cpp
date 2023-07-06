@@ -59,7 +59,6 @@ bool	ClapTrap::_useEnergy() {
 void	ClapTrap::attack(const std::string& target) {
 	if (!_useEnergy())	
 		return ;
-	// if para os sem nome ???
 	std::cout << "ClapTrap 🤖 " << _name << " attacks 🤺 " << target << ", causing " << _atack_damage << " points of damage! 🩸" << std::endl;
 }
 

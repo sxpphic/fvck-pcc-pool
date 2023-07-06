@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 10:33:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/27 11:03:41 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:33:07 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ ScavTrap::~ScavTrap() { std::cout << "ScavTrap 🚜 destructor called 💣" << s
 void	ScavTrap::attack(const std::string target) {
 	if (!_useEnergy())	
 		return ;
-	// if para os sem nome ???
 	std::cout << "ScavTrap 🚜 " << _name << " attacks 🤺 " << target << ", causing " << _atack_damage << " points of damage! 🩸" << std::endl;
 }
 
