@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:58:59 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/27 14:20:42 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:15:10 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ FragTrap::~FragTrap() { std::cout << "FragTrap 🐸 destructor called 💣" << s
 
 void FragTrap::highFivesGuys(void) {
 	static unsigned int high_fives_count;
+	
+	if (_hit_points <= 0) {
+		std::cout << "you're dead 💀" << std::endl;
+		return ;
+	}
 
 	high_fives_count++;
 	std::cout << "HIGH FIVE 🙏 🙌" << std::endl;

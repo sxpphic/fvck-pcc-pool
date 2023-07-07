@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 18:24:36 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/24 10:25:21 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:00:10 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,16 @@ int main (void)
 	b.attack("asdf");
 	ClapTrap	c(b);
 	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	c.attack("robot");
+	
 	return (0);
 }

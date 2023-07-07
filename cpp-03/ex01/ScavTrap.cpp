@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 10:33:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:33:07 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:15:35 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@ void	ScavTrap::attack(const std::string target) {
 }
 
 void ScavTrap::guardGate() {
-	if (!_useEnergy())	
+
+	if (_hit_points <= 0) {
+		std::cout << "you're dead 💀" << std::endl;
 		return ;
+	}
+
 	std::cout << "ScavTrap 🚜 " << _name << " is now in Gate 🚪 keeper 🔐 mode"  << std::endl;
 }
 
