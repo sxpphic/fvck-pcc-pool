@@ -6,25 +6,25 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:03:39 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/04 11:47:37 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:10:56 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 // constructor
-Fixed::Fixed() : _fixed_point(0), _fract_bits(8) {
+Fixed::Fixed() : _fixed_point(0) {
 	std::cout << "default constructor called 🏗️" << std::endl;
 }
 
 // int constructor
-Fixed::Fixed(const int num) :  _fract_bits(8) {
+Fixed::Fixed(const int num) {
 	std::cout << "int constructor called 🔢" << std::endl;
 	_fixed_point = num * (1 << _fract_bits);
 }
 
 // float constructor
-Fixed::Fixed(const float num) : _fract_bits(8) {
+Fixed::Fixed(const float num) {
 	std::cout << "float constructor called 🛟" << std::endl;
 	_fixed_point = roundf((num * (1 << _fract_bits)));
 }
@@ -33,7 +33,6 @@ Fixed::Fixed(const float num) : _fract_bits(8) {
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "copy constructor called ✂️" << std::endl;
 	_fixed_point = other._fixed_point;
-	_fract_bits = other._fract_bits;
 }
 
 /* OVERLOADS */
@@ -43,7 +42,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout << "copy assignment operator called 🟰" << std::endl;
 	if (this != &other) {
 		_fixed_point = other._fixed_point;
-		_fract_bits = other._fract_bits;
 	}
 	return (*this);
 }
@@ -78,39 +76,33 @@ bool	Fixed::operator<(const Fixed& other) const {
 	return (_fixed_point < other._fixed_point);
 }
 
+// arithmetics operations 
+
 Fixed	Fixed::operator+(const Fixed& other) const {
 	Fixed	ret;
-	int		bigger_fract_bits;
 
-	bigger_fract_bits = _fract_bits > other._fract_bits ? _fract_bits : other._fract_bits;
-	ret.setRawBits(_fixed_point * (1 << (bigger_fract_bits - _fract_bits)) + other._fixed_point * (1 << (bigger_fract_bits - other._fract_bits))); // converter os frectinais bits
-	ret._fract_bits = bigger_fract_bits;
+	ret.setRawBits(_fixed_point  + other._fixed_point); // converter os frectinais bits awcho q n 
 	return (ret);
 }
 
 Fixed	Fixed::operator-(const Fixed& other) const {
 	Fixed	ret;
-	int		bigger_fract_bits;
 
-	bigger_fract_bits = _fract_bits > other._fract_bits ? _fract_bits : other._fract_bits;
-	ret.setRawBits(_fixed_point * (1 << (bigger_fract_bits - _fract_bits)) - other._fixed_point * (1 << (bigger_fract_bits - other._fract_bits))); // converter os frectinais bits
-	ret._fract_bits = bigger_fract_bits;
+	ret.setRawBits(_fixed_point - other._fixed_point);
 	return (ret);
 }
 
 Fixed	Fixed::operator*(const Fixed& other) const{
 	Fixed	ret;
-	ret.setRawBits(_fixed_point * other._fixed_point);
-	ret._fract_bits = _fract_bits + other._fract_bits;
+
+	ret.setRawBits((_fixed_point * other._fixed_point) >> _fract_bits);
 	return (ret);
 }
 
 Fixed	Fixed::operator/(const Fixed& other) const {
 	Fixed	ret;
-	ret.setRawBits(_fixed_point / other._fixed_point);
-	ret._fract_bits = _fract_bits - other._fract_bits;
-	if (ret._fract_bits < 0)
-		ret._fract_bits = 0;
+
+	ret.setRawBits((_fixed_point << _fract_bits) / other._fixed_point);
 	return (ret);
 }
 
