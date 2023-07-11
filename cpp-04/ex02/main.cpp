@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:56:14 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/30 09:57:05 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/11 11:17:29 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,30 @@
 
 int main (void)
 {
-/* 	AAnimal* forest[50];
+	//const AAnimal* meta = new AAnimal;
+	const AAnimal* c = new Cat;
+	const AAnimal* d = new Dog;
 
-	for(int i = 0; i < 50; i++)
-	{
-		if (i < 25)
-			forest[i] = new Cat;
-		else
-			forest[i] = new Dog;
-	}		
+	// derived cat class
+	
+	c->makeSound();
+	std::cout << c->getType() << " " << std::endl;
 
-	for (int i = 0; i < 50; i++)
-		delete forest[i];
-	return (0);	 */
+	//derived dog class
+
+	d->makeSound();
+	std::cout << d->getType() << " " << std::endl;
+	
+	delete d;
+	delete c;
 }
 
-
-
 // deep copy;
-/* 
-int main (void)
+
+/* int main (void)
 {
 	Cat a;
 	Cat b;
-
-	
 
 	a.setIdea("pukemon", 10);
 
@@ -53,7 +52,6 @@ int main (void)
 	a.setIdea("asdfasdf", 10);
 	std::cout << a.getIdea(10) << std::endl;
 	std::cout << b.getIdea(10) << std::endl;
-
 	
 	return (0);	
 } */
