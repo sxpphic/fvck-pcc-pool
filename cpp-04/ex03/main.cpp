@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:07:45 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/11 11:23:57 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:54:59 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
-
-	//src->learnMateria(new Cure());
 	
 	ICharacter* me = new Character("me");
 	
@@ -34,17 +32,25 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 	
 	ICharacter* bob = new Character("bob vance, vance refrigeration");
-
-	
-//	std::cout << a->getName() << std::endl;
 		
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+
+// out of range
+	me->use(4, *bob);
 	
 	me->unequip(1);
+	me->unequip(0);
 	
 	delete bob;
 	delete me;

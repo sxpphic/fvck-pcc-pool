@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:32:35 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/11 11:40:22 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:32:14 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,14 @@ void	Character::equip(AMateria* m){
 			return ;
 		}
 	}
+	std::cout << "Inventory is full! DELETING the materia" << std::endl;
+	delete m;
 }
 
 void	Character::unequip(int idx) {
 	if (idx >= 0 && idx < 4) {
 		if (_slot[idx]) {
+			dropped.push(_slot[idx]);
 			_slot[idx] = NULL;
 		}
 	}
@@ -82,8 +85,4 @@ void	Character::use(int idx, ICharacter& target) {
 	if ((idx >= 0 && idx < 4) && _slot[idx]) {
 		_slot[idx]->use(target);
 	}
-}
-
-void	Character::save_materia_addr(AMateria *to_discart) {
-	while (_dropped_materias)
 }

@@ -6,6 +6,7 @@ SRC			=	main.cpp			\
 				MateriaSource.cpp	\
 				Ice.cpp				\
 				Cure.cpp			\
+				FreeStack.cpp		\
 
 CC			=	c++
 
