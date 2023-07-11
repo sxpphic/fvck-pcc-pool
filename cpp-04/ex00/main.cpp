@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:56:14 by vipereir          #+#    #+#             */
-/*   Updated: 2023/06/29 13:46:26 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/11 10:43:17 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main (void)
 {
-	const Animal* meta = new Animal;
+ 	const Animal* meta = new Animal;
 	const Animal* c = new Cat;
 	const Animal* d = new Dog;
 	
@@ -38,6 +38,10 @@ int main (void)
 	delete d;
 	delete c;
 	delete meta;
+
+/* 	const WrongAnimal* c = new WrongCat;
 	
+	c->makeSound();
+	std::cout << c->getType() << " " << std::endl; */
 	return (0);	
 }
