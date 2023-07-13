@@ -4,54 +4,16 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-HumanA::HumanA()
+/* HumanA::HumanA()
 {
 	this->_myWeapon = NULL;
-}
+} */
 
-HumanA::HumanA(std::string name, Weapon &weaponREF)
+HumanA::HumanA(std::string name, Weapon &weaponREF) : _name(name), _myWeapon(weaponREF) {}
+
+HumanA::~HumanA() {}
+
+void	HumanA::attack(void)
 {
-	this->_name = name;
-	this->setWeapon(weaponREF);
+	std::cout << this->_name << " attacks with their " << _myWeapon.getType() << std:: endl;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
-
-HumanA::~HumanA()
-{
-}
-
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-void		HumanA::attack(void)
-{
-	if (this->_myWeapon == NULL)
-	{
-		std::cout << "no weapon, looser 😹" << std::endl;
-		return ;
-	}
-	std::cout << this->_name << " attacks with their " << this->_myWeapon->getType() << std:: endl;
-}
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-void	HumanA::setWeapon(Weapon &weaponREF)
-{
-	this->_myWeapon = &weaponREF;
-}
-
-
-
-/* ************************************************************************** */
