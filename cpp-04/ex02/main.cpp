@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 09:56:14 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/11 11:17:29 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:28:22 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "WrongCat.hpp"
 
 
-int main (void)
+/* int main (void)
 {
 	//const AAnimal* meta = new AAnimal;
 	const AAnimal* c = new Cat;
@@ -33,18 +33,17 @@ int main (void)
 	
 	delete d;
 	delete c;
-}
+} */
 
 // deep copy;
 
-/* int main (void)
+int main (void)
 {
 	Cat a;
-	Cat b;
 
 	a.setIdea("pukemon", 10);
 
-	b = a;
+	Cat b(a);
 	
 	std::cout << a.getIdea(10) << std::endl;
 	std::cout << b.getIdea(10) << std::endl;
@@ -54,4 +53,4 @@ int main (void)
 	std::cout << b.getIdea(10) << std::endl;
 	
 	return (0);	
-} */
+}
