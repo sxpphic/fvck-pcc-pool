@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/17 14:51:42 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:59:43 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <string>
 # include <iostream>
-
-
 
 class Bureaucrat {
 
@@ -29,7 +27,12 @@ class Bureaucrat {
 
 		class GradeTooHighException : std::exception {
 			public:
-				GradeTooHighException();
+			//	GradeTooHighException();
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : std::exception {
+			public:
+			//	GradeTooLowException();
 				virtual const char* what() const throw();
 		};	
 

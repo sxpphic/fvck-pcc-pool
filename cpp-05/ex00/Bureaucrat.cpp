@@ -6,17 +6,27 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:48:01 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/17 14:41:34 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:50:39 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() {}
+// exceptions
+
+//Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("grade too high 🚀 !!!!");
 }
+
+//Bureaucrat::GradeTooLowException::GradeTooLowException() {}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("grade too low 🤏 !!!!");
+}
+
+// bureaucrat
 
 Bureaucrat::Bureaucrat() : _name("no name"), _grade(1) {}
 
@@ -26,8 +36,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	if (grade <= 0)
 		throw GradeTooHighException();
 	else if (grade > 150)
-		(void)grade; // throw gradetoolowexception
-	std::cout << "asdf" << std::endl;
+		throw GradeTooLowException();
 	_grade = grade;
 }
 
