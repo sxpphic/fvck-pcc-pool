@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/17 18:07:06 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:00:44 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ class Bureaucrat {
 	public:
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
-		//Bureaucrat(Bureaucrat& other);
+		Bureaucrat(Bureaucrat& other);
 		~Bureaucrat();
-		//Bureaucrat& operator=(Bureaucrat& other);
+		Bureaucrat& operator=(Bureaucrat& other);
+		friend std::ostream& operator<<(std::ostream& out, Bureaucrat& obj);
+		int 		getGrade() const;
+		std::string getName() const;
+		void		increment();
+		void		decrement();
 
 		class GradeTooHighException : public std::exception {
 			public:
