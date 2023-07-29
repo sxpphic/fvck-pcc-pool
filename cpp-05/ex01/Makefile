@@ -1,4 +1,4 @@
-NAME		=	despachante_detran_rj
+NAME		=	cancelamento
 
 SRC			=	main.cpp		\
 				Bureaucrat.cpp	\
