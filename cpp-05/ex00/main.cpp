@@ -14,14 +14,19 @@
 
 int main(void) {
 
-	Bureaucrat a("lavinsky", 147);
-	a.increment();
-	a.decrement();
-	a.decrement();
-	a.decrement();
-	a.decrement();
-	a.decrement();
-	std::cout << a << std::endl;
+	try
+	{
+		Bureaucrat a("lavinsky", 150);
+		//a.increment();
+		//a.decrement();
+		//a.decrement();
+		//a.decrement();
+		//a.decrement();
+		std::cout << a << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 

@@ -17,13 +17,13 @@
 //Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("grade too high 🚀 !!!!, setting grade to 1");
+	return ("grade too high 🚀 !!!!");
 }
 
 //Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("grade too low 🤏 !!!!, setting grade to 150");
+	return ("grade too low 🤏 !!!!");
 }
 
 // bureaucrat
@@ -35,20 +35,11 @@ Bureaucrat::Bureaucrat(Bureaucrat& other) : _name(other._name), _grade(other._gr
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
-	try {
-		if (grade < 1) {
-			_grade = 1;
-			throw Bureaucrat::GradeTooHighException();
-		}
-		else if (grade > 150) {
-			_grade = 150;
-			throw Bureaucrat::GradeTooLowException();
-		}
-		_grade = grade;
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	_grade = grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat& other) {
@@ -71,27 +62,17 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& obj) {
 // member functions
 
 void	Bureaucrat::increment() {
-	try {
-		if (_grade > 1)
-			_grade--;
-		else
-			throw Bureaucrat::GradeTooHighException();
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (_grade > 1)
+		_grade--;
+	else
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::decrement() {
-	try {
-		if (_grade < 150)
-			_grade++;
-		else
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (_grade < 150)
+		_grade++;
+	else
+		throw Bureaucrat::GradeTooLowException();
 }
 
 
