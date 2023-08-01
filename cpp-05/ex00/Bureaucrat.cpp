@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:48:01 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/25 13:27:32 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:21:41 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 // exceptions
 
-//Bureaucrat::GradeTooHighException::GradeTooHighException() {}
-
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("grade too high 🚀 !!!!");
 }
-
-//Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("grade too low 🤏 !!!!");
