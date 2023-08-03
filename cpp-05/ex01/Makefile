@@ -2,6 +2,7 @@ NAME		=	cancelamento
 
 SRC			=	main.cpp		\
 				Bureaucrat.cpp	\
+				Form.cpp		\
 
 CC			=	c++
 

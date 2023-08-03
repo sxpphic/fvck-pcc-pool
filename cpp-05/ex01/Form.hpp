@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:32 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 09:12:18 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 09:55:50 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,24 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 
 class Form {
 	
 	public:
 		Form();
+		Form(std::string name, int grade_to_sign, int grade_to_exec);
 		Form(const Form& other);
 		~Form();
 		Form& operator=(const Form& other);
 		
-		std::string getName(void);
-		bool		getIsSigned(void);
-		int			getGradeToSign(void);
-		int			getGradeToExec(void);
-		friend std::ostream& operator<<(std::ostream& out, const Form& obj);
-		void		beSigned(const Bureaucrat& obj);
+		const std::string&		getName(void) const;
+		bool					getIsSigned(void) const;
+		int						getGradeToSign(void) const;
+		int						getGradeToExec(void) const;
+		friend std::ostream&	operator<<(std::ostream& out, const Form& obj);
+		void					beSigned(const Bureaucrat& obj);
 
 		class GradeTooHighException : public std::exception {
 			public:

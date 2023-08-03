@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 09:10:31 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:25:56 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <string>
 # include <iostream>
+# include "Form.hpp"
+
+class Form;
+
 
 class Bureaucrat {
 
@@ -30,7 +34,7 @@ class Bureaucrat {
 		void		increment();
 		void		decrement();
 
-		void		signForm(void);
+		bool		signForm(const Form& obj) const;
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what(void) const throw();
