@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:32 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 15:48:21 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:26:19 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ class Form {
 		bool					getIsSigned(void) const;
 		int						getGradeToSign(void) const;
 		int						getGradeToExec(void) const;
+		friend std::ostream&	operator<<(std::ostream& out, const Form& obj);
 		void					beSigned(const Bureaucrat& obj);
+
+		virtual void			execute(const Bureaucrat& executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
@@ -49,7 +52,5 @@ class Form {
 		const int 	_grade_to_sign;
 		const int 	_grade_to_exec;
 };
-
-std::ostream&	operator<<(std::ostream& out, const Form& obj);
 
 #endif

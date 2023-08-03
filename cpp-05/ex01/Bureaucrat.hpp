@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 10:25:56 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:51:09 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Bureaucrat {
 		Bureaucrat(Bureaucrat& other);
 		~Bureaucrat();
 		Bureaucrat& operator=(Bureaucrat& other);
-		friend std::ostream& operator<<(std::ostream& out, Bureaucrat& obj);
 		int 		getGrade() const;
 		std::string getName() const;
 		void		increment();
@@ -50,5 +49,7 @@ class Bureaucrat {
 		int 				_grade;
 	
 };
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat& obj);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:30:57 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 15:37:23 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:31:33 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void) {
 	try {
-		Bureaucrat cara("adf", 1);
+		Bureaucrat cara("adf", 11);
 		Form a("cancelamento", 1, 10);
 		a.beSigned(cara);
 
