@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/07/25 12:00:44 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/03 09:10:31 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,14 @@ class Bureaucrat {
 		void		increment();
 		void		decrement();
 
+		void		signForm(void);
 		class GradeTooHighException : public std::exception {
 			public:
-				//GradeTooHighException();
 				virtual const char* what(void) const throw();
 		};
 		
 		class GradeTooLowException : public std::exception {
 			public:
-			//	GradeTooLowException();
 				virtual const char* what(void) const throw();
 		};	
 
