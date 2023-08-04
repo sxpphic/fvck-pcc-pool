@@ -1,8 +1,18 @@
-NAME		=	cancelamento
+NAME		=	many_forms
 
-SRC			=	main.cpp		\
-				Bureaucrat.cpp	\
-				Form.cpp		\
+SRC			=	main.cpp					\
+				Bureaucrat.cpp				\
+				AForm.cpp					\
+				ShrubberyCreationForm.cpp 	\
+				RobotomyRequestForm.cpp 	\
+				PresidentialPardonForm.cpp 	\
+
+
+HEADERS		= 	Bureaucrat.hpp				\
+				AForm.hpp					\
+				ShrubberyCreationForm.hpp 	\
+				RobotomyRequestForm.hpp 	\
+				PresidentialPardonForm.hpp 	\
 
 CC			=	c++
 
@@ -12,7 +22,7 @@ RM			= rm -f
 
 all:		$(NAME)
 
-$(NAME):	$(SRC)
+$(NAME):	$(SRC) $(HEADERS)
 			$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:		

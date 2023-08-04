@@ -71,7 +71,7 @@ std::ostream& operator<<(std::ostream& out, const ${class_name}& obj) {
 
 EOF
 
-echo "Created ${source_file}🫡"
+echo "Created ${source_file} 🫡"
 
 
 
