@@ -6,27 +6,35 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other) {}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other) {
+	_target = other._target;
+}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
 //getters 🫳
 
 // overloads 💯
-/* RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
+
+ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
 	if (this == &other)
 		return (*this);
-	// copy
+	*this = other;
+	_target = other._target;
+
 	return (*this);
 }
- */
-/* std::ostream& operator<<(std::ostream& out, const RobotomyRequestForm& obj) {
-	return (out);
-}
- */
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
 	(void)executor;
-	std::cout << "adsfa" << std::endl;
+	std::cout << "* DRILLING NOISES *" << std::endl;
+	std::cout << "* 🛠️🤖 bzzzzzz bzzzzzz 🤖🛠️ *" << std::endl;
+
+	if (rand() % 100 >= 50) {
+		std::cout << _target << " has been robotomized 🦾🤖" << std::endl;
+	} else {
+		std::cout << "robotomy has failed 🥵😵‍💫🤒" << std::endl;
+	}
+
 }
 
