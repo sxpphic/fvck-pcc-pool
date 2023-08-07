@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:47:58 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/07 13:14:30 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:16:50 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Bureaucrat {
 		void		increment();
 		void		decrement();
 
-		bool		signForm(const AForm& obj) const;
-		bool		executeForm(const AForm& form);
+		void		signForm(AForm& obj);
+		void		executeForm(const AForm& form);
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what(void) const throw();
