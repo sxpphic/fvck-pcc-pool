@@ -30,8 +30,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 	return (out);
 } */
 
-void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
-	(void)executor;
+bool ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
+	if (!checkRequirements(executor)) {
+		return (false);
+	}
 	std::ofstream shrubbery;
 	std::string file_name = _target + "_shrubbery";
 
@@ -41,5 +43,5 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
 	shrubbery << "                     .o00o\n                   o000000oo\n                  00000000000o\n                 00000000000000\n              oooooo  00000000  o88o\n           ooOOOOOOOoo  ```''  888888\n         OOOOOOOOOOOO'.qQQQQq. `8888'\n        oOOOOOOOOOO'.QQQQQQQQQQ/.88'\n        OOOOOOOOOO'.QQQQQQQQQQ/ /q\n         OOOOOOOOO QQQQQQQQQQ/ /QQ\n           OOOOOOOOO `QQQQQQ/ /QQ'\n             OO:F_P:O `QQQ/  /Q'\n                \\\\. \\ |  // |\n                d\\ \\\\\\|_////\n                qP| \\\\ _' `|Ob\n                   \\  / \\  \\Op\n                   |  | O| |\n           _       /\\. \\_/ /\\\n            `---__/|_\\\\   //|  __\n                  `-'  `-'`-'-'\n" << std::endl;
 	shrubbery << "                     .o00o\n                   o000000oo\n                  00000000000o\n                 00000000000000\n              oooooo  00000000  o88o\n           ooOOOOOOOoo  ```''  888888\n         OOOOOOOOOOOO'.qQQQQq. `8888'\n        oOOOOOOOOOO'.QQQQQQQQQQ/.88'\n        OOOOOOOOOO'.QQQQQQQQQQ/ /q\n         OOOOOOOOO QQQQQQQQQQ/ /QQ\n           OOOOOOOOO `QQQQQQ/ /QQ'\n             OO:F_P:O `QQQ/  /Q'\n                \\\\. \\ |  // |\n                d\\ \\\\\\|_////\n                qP| \\\\ _' `|Ob\n                   \\  / \\  \\Op\n                   |  | O| |\n           _       /\\. \\_/ /\\\n            `---__/|_\\\\   //|  __\n                  `-'  `-'`-'-'\n" << std::endl;
 	shrubbery.close();
-
+	return (true);
 }

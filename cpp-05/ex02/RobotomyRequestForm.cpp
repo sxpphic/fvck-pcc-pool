@@ -25,11 +25,13 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 	return (*this);
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
+bool RobotomyRequestForm::execute(const Bureaucrat& executor) const {
+	if (!checkRequirements(executor)) {
+		return (false);
+	}
 	std::srand(static_cast<unsigned>(time(0)));
 	int random_num = (rand() % 100) + 1;
 
-	(void)executor;
 	std::cout << "* DRILLING NOISES *" << std::endl;
 	std::cout << "* 🛠️🤖 bzzzzzz bzzzzzz 🤖🛠️ *" << std::endl;
 
@@ -38,6 +40,6 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
 	} else {
 		std::cout << "robotomy has failed 🥵😵‍💫🤒" << std::endl;
 	}
-
+	return (true);
 }
 

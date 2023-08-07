@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:29 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/04 10:06:07 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:03:31 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,19 @@ void	AForm::beSigned(const Bureaucrat& obj) {
 		_is_signed = true;
 	else
 		throw AForm::GradeTooLowException();
+}
+
+bool	AForm::checkRequirements(const Bureaucrat& obj) const {
+	if (!getIsSigned()) {
+		std::cout << "Form not signed !!!" << std::endl;
+		return (false);
+	}
+	if (obj.getGrade() >= getGradeToExec()) {
+		return (true);
+	} else {
+		throw AForm::GradeTooLowException();
+	}
+	return (false);
 }
 
 

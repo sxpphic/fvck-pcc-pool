@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:48:01 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/04 09:47:13 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:28:15 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ bool Bureaucrat::signForm(const AForm& obj) const {
 		std::cout << _name << " couldn't sign form " << obj.getName() << "due to grade too low 🤣🤣😂" << std::endl;
 		return (false);
 	}
+}
+
+bool Bureaucrat::executeForm(const AForm& form) {
+	if (!form.execute(*this)) {
+		return (false);
+	}
+	std::cout << _name << " executed " << form.getName() << std::endl;
+	return (true);
 }
 
 

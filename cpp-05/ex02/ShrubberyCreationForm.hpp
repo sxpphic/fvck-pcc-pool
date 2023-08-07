@@ -12,7 +12,7 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
 	//	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-		virtual void		execute(const Bureaucrat& executor) const;
+		virtual bool		execute(const Bureaucrat& executor) const;
 
 
 	private:

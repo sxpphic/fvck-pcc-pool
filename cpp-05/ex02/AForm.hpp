@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:32 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/04 10:23:15 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:19:16 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ class AForm {
 		int						getGradeToExec(void) const;
 		friend std::ostream&	operator<<(std::ostream& out, const AForm& obj);
 		void					beSigned(const Bureaucrat& obj);
+		bool					checkRequirements(const Bureaucrat& obj) const;
 
-		virtual void			execute(const Bureaucrat& executor) const = 0;
+		virtual bool			execute(const Bureaucrat& executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
