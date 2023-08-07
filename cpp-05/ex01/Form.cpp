@@ -6,22 +6,22 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:29 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 15:47:47 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:33:26 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
 
 const char* Form::GradeTooHighException::what() const throw() {
-	return ("form says: grade too HIGH 😕");
+	return ("Form says: grade too HIGH 😕");
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-	return ("form says: grade too LOW 😭");
+	return ("Form says: grade too LOW 😭");
 }
 
 
-Form::Form() : _name("generic form"), _is_signed(false), _grade_to_sign(1), _grade_to_exec(1) {}
+Form::Form() : _name("generic Form"), _is_signed(false), _grade_to_sign(1), _grade_to_exec(1) {}
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_exec) : _name(name), _is_signed(false), _grade_to_sign(grade_to_sign), _grade_to_exec(grade_to_exec) {
 	if (grade_to_exec < 1 || grade_to_sign < 1)
@@ -57,10 +57,9 @@ std::ostream& operator<<(std::ostream& out, const Form& obj) {
 }
 
 void	Form::beSigned(const Bureaucrat& obj) {
-	if (obj.signForm(*this))
+	if (obj.getGrade() <= _grade_to_sign)
 		_is_signed = true;
 	else
 		throw Form::GradeTooLowException();
 }
-
 

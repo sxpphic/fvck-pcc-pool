@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 11:48:01 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 10:26:41 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:34:35 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,10 @@ void	Bureaucrat::decrement() {
 		throw Bureaucrat::GradeTooLowException();
 }
 
-bool Bureaucrat::signForm(const Form& obj) const {
-	if (_grade <= obj.getGradeToSign()) {
+void Bureaucrat::signForm(Form& obj) {
+	if (_grade <= obj.getGradeToSign())
 		std::cout << _name << " signed form " << obj.getName() << std::endl;
-		return (true);
-	} else {
+	else
 		std::cout << _name << " couldn't sign form " << obj.getName() << "due to grade too low 🤣🤣😂" << std::endl;
-		return (false);
-	}
+	obj.beSigned(*this);
 }
-
-

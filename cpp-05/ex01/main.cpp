@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:30:57 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/03 15:37:23 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:37:25 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(void) {
 	try {
-		Bureaucrat cara("adf", 1);
-		Form a("cancelamento", 1, 10);
-		a.beSigned(cara);
-
-		std::cout << a << std::endl;
+		Bureaucrat zoid("zoid", 1);
+		Form generic_form("cancelamento", 1, 10);
+		zoid.signForm(generic_form);
+		
+		std::cout << generic_form << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
