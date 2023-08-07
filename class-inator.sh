@@ -69,6 +69,10 @@ std::ostream& operator<<(std::ostream& out, const ${class_name}& obj) {
 	return (out);
 }
 
+// methods
+
+
+
 EOF
 
 echo "Created ${source_file} 🫡"
