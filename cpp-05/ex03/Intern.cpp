@@ -8,7 +8,7 @@
 Intern::Intern() {}
 
 Intern::Intern(const Intern& other) {
-	//copy
+	(void)other;
 }
 
 Intern::~Intern() {}
@@ -31,9 +31,12 @@ AForm* Intern::makeForm(const std::string& form, const std::string& target) {
 	std::string forms_names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	int i = 0;
-	for (i; i < 3; i++) {
-		if (form == forms_names[i])
+	while (i < 3) {
+		if (form == forms_names[i]) {
+			std::cout << "intern creates " << form << std::endl;
 			break ;
+		}
+		i++;
 	}
 
 	switch (i) {
@@ -46,9 +49,13 @@ AForm* Intern::makeForm(const std::string& form, const std::string& target) {
 		case (2):
 			return (new PresidentialPardonForm(target));
 			break;
+		case (3):
+			std::cout << "form does not exist !!!!!!" << std::endl;
+			break;
 		default:
 			break;
 	}
+	return (NULL);
 }
 
 
