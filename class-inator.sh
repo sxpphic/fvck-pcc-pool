@@ -17,6 +17,7 @@ cat << EOF >> ${header_file}
 #ifndef ${class_name}_H
 # define ${class_name}_H
 # include <iostream>
+# include <string>
 
 class ${class_name} {
 	
