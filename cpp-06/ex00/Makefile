@@ -1,4 +1,4 @@
-NAME		=	casting?
+NAME		=	casting
 
 SRC			=	main.cpp					\
 				ScalarConverter.cpp			\
