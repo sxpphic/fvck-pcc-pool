@@ -14,7 +14,6 @@ int main(void) {
 	std::cout << reinterpret_cast<uintptr_t>(random_data) << std::endl;
 	std::cout << buffer << std::endl;
 
-
 	deserialized_data = Serializer::deserialize(buffer);
 
 	std::cout << random_data->some_data << std::endl;
@@ -22,12 +21,6 @@ int main(void) {
 
 	std::cout << random_data << std::endl;
 	std::cout << deserialized_data << std::endl;
-
-
-	
-
-
-
 
 	delete random_data;
 
