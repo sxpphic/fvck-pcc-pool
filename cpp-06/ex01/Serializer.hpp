@@ -22,7 +22,5 @@ class Serializer {
 	private:
 };
 
-std::ostream&	operator<<(std::ostream& out, const Serializer& obj);
-
 #endif
 
