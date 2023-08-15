@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:44:26 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/15 17:20:46 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:31:12 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <stdlib.h>
 # include <inttypes.h>
 
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif

@@ -2,9 +2,6 @@ NAME		=	castingv3
 
 SRC			=	main.cpp					\
 				Base.cpp					\
-				A.cpp						\
-				B.cpp						\
-				C.cpp						\
 				functions.cpp				\
 
 HEADERS		= 	Base.hpp					\
