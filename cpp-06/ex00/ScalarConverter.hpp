@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:13 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/16 18:51:53 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/16 19:22:07 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ class ScalarConverter {
 
 	private:
 };
+
+int		int_type(const std::string& str_num);
+char	char_type(const std::string& str_num);
+float 	float_type(const std::string& str_num);
+double	double_type(const std::string& str_num);
 
 #endif
 
