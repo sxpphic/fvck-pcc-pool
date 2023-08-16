@@ -50,6 +50,7 @@ cat << EOF > ${source_file}
 ${class_name}::${class_name}() {}
 
 ${class_name}::${class_name}(const ${class_name}& other) {
+	(void)other;
 	//copy
 }
 
