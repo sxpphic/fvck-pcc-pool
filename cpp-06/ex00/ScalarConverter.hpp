@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:13 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/16 19:22:07 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:23:57 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,17 @@ class ScalarConverter {
 		static void convert(const std::string& num);
 
 	private:
+		static int 	check_edge_cases(const std::string& str, int type_to_check);
+		static void	int_type(const std::string& str_num);
+		static void	char_type(const std::string& str_num);
+		static void float_type(const std::string& str_num);
+		static void	double_type(const std::string& str_num);
+		static int	check_is_valid(const std::string& str);
+	
 };
 
-int		int_type(const std::string& str_num);
-char	char_type(const std::string& str_num);
-float 	float_type(const std::string& str_num);
-double	double_type(const std::string& str_num);
+
+
 
 #endif
 
