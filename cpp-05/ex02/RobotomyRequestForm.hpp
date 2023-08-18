@@ -13,7 +13,7 @@ class RobotomyRequestForm : public AForm {
 		~RobotomyRequestForm();
 
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
-		virtual bool			execute(const Bureaucrat& executor) const;
+		bool					execute(const Bureaucrat& executor) const;
 
 	private:
 		std::string 	_target;

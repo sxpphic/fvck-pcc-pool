@@ -13,7 +13,7 @@ class ShrubberyCreationForm : public AForm {
 		~ShrubberyCreationForm();
 
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
-		virtual bool			execute(const Bureaucrat& executor) const;
+		bool					execute(const Bureaucrat& executor) const;
 
 	private:
 		std::string 	_target;
