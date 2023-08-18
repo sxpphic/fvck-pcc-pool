@@ -6,9 +6,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other) {
-	_target = other._target;
-}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), _target(other._target) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
@@ -19,9 +17,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
  RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
 	if (this == &other)
 		return (*this);
-	*this = other;
 	_target = other._target;
-
 	return (*this);
 }
 
@@ -42,4 +38,3 @@ bool RobotomyRequestForm::execute(const Bureaucrat& executor) const {
 	}
 	return (true);
 }
-

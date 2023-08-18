@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:29 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/07 14:28:55 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/18 12:53:07 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ AForm& AForm::operator=(const AForm& other) {
 }
 
 //getters
-const std::string& AForm::getName(void) const { return (_name); }
-bool AForm::getIsSigned(void) const { return (_is_signed); }
-int AForm::getGradeToSign(void) const { return (_grade_to_sign); }
-int AForm::getGradeToExec(void) const { return (_grade_to_exec); }
+
+const std::string&	AForm::getName(void) const { return (_name); }
+bool 				AForm::getIsSigned(void) const { return (_is_signed); }
+int 				AForm::getGradeToSign(void) const { return (_grade_to_sign); }
+int 				AForm::getGradeToExec(void) const { return (_grade_to_exec); }
 
 std::ostream& operator<<(std::ostream& out, const AForm& obj) {
 	out << "Form name: " << obj.getName() << std::endl;
