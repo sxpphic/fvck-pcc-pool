@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:32 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/07 14:09:55 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/18 12:07:54 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ class AForm {
 		};
 
 	private:
-		std::string _name;
-		bool		_is_signed;
-		const int 	_grade_to_sign;
-		const int 	_grade_to_exec;
+		const std::string	_name;
+		bool				_is_signed;
+		const int 			_grade_to_sign;
+		const int 			_grade_to_exec;
 };
 
 #endif
