@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:05:00 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/18 13:05:01 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/18 13:09:15 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ AForm* Intern::makeForm(const std::string& form, const std::string& target) {
 	std::string forms_names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	int i = 0;
-	for (i; i < 3; i++) {
+	for (; i < 3; i++) {
 		if (form == forms_names[i]) {
 			std::cout << "intern creates " << form << std::endl;
 			break ;
