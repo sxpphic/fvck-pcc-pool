@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/18 11:11:54 by vipereir          #+#    #+#             */
+/*   Updated: 2023/08/18 13:49:17 by vipereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef Span_H
 # define Span_H
 # include <iostream>
 # include <string>
+# include <set>
+# include <vector>
 
 class Span {
 	
@@ -12,16 +26,29 @@ class Span {
 		~Span();
 		Span& operator=(const Span& other);
 
-		void addNumber(int num);
-		void shortestSpan();
-		void longestSpan();
-		void addRange();
+		void 	check_conditions();
+
+		void 	addNumber(int num);
+		int		shortestSpan();
+		int		longestSpan();
+
+
+		
+		void	addRange(int start, int end);
+
+		template <typename Iterator>
+		void	addRange(Iterator begin, Iterator end) {
+			for (Iterator it = begin; it != end; it++) {
+				addNumber(*it);
+			}
+		}
 		
 
 	private:
+		std::multiset<int>	_my_set;
+		unsigned int 		_max_size;
+		unsigned int 		_size;
 };
-
-std::ostream&	operator<<(std::ostream& out, const Span& obj);
 
 #endif
 

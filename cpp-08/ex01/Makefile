@@ -1,4 +1,4 @@
-NAME		=	vivo_cobrança
+NAME		=	sapn 
 
 SRC			=	main.cpp					\
 				Span.cpp					\
@@ -23,5 +23,9 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+run:		all
+			./$(NAME)
+
 
 .PHONY:		all clean fclean re
