@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:19:32 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/18 12:07:54 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/18 12:51:59 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ class AForm {
 		AForm(std::string name, int grade_to_sign, int grade_to_exec);
 		AForm(const AForm& other);
 		virtual ~AForm();
-		AForm& operator=(const AForm& other);
+		
+		AForm& 					operator=(const AForm& other);
+		friend std::ostream&	operator<<(std::ostream& out, const AForm& obj);
 		
 		const std::string&		getName(void) const;
 		bool					getIsSigned(void) const;
 		int						getGradeToSign(void) const;
 		int						getGradeToExec(void) const;
-		friend std::ostream&	operator<<(std::ostream& out, const AForm& obj);
 		bool					checkRequirements(const Bureaucrat& obj) const;
-		
 		void					beSigned(const Bureaucrat& obj);
 		virtual bool			execute(const Bureaucrat& executor) const = 0;
 

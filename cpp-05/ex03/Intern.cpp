@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/18 13:05:00 by vipereir          #+#    #+#             */
+/*   Updated: 2023/08/18 13:05:01 by vipereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -7,9 +19,7 @@
 
 Intern::Intern() {}
 
-Intern::Intern(const Intern& other) {
-	(void)other;
-}
+Intern::Intern(const Intern& other) { (void)other; }
 
 Intern::~Intern() {}
 
@@ -20,23 +30,20 @@ Intern::~Intern() {}
 Intern& Intern::operator=(const Intern& other) {
 	if (this == &other)
 		return (*this);
-	// copy
 	return (*this);
 }
 
 // methods
 
-
 AForm* Intern::makeForm(const std::string& form, const std::string& target) {
 	std::string forms_names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	int i = 0;
-	while (i < 3) {
+	for (i; i < 3; i++) {
 		if (form == forms_names[i]) {
 			std::cout << "intern creates " << form << std::endl;
 			break ;
 		}
-		i++;
 	}
 
 	switch (i) {

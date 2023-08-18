@@ -11,16 +11,13 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
-	//	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-		virtual bool		execute(const Bureaucrat& executor) const;
 
+		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
+		virtual bool			execute(const Bureaucrat& executor) const;
 
 	private:
 		std::string 	_target;
 
 };
 
-//std::ostream&	operator<<(std::ostream& out, const ShrubberyCreationForm& obj);
-
 #endif
-
