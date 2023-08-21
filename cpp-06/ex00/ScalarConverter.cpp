@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:09 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/17 13:24:30 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:00:53 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void ScalarConverter::char_type(const std::string& str_num) {
 	
 	buffer >> val;
 	if (val >= 32 && val <= 126)
-		std::cout << "char: '" << static_cast<char>(val) << "'" << std::endl;
+		std::cout << "char: '" <</*  static_cast<char> */(val) << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	std::cout << std::fixed << std::setprecision(1);		
@@ -95,11 +95,11 @@ void ScalarConverter::int_type(const std::string& str_num) {
 	
 	buffer >> val;
 	if (val >= 32 && val <= 126)
-		std::cout << "char: '" << static_cast<char>(val) << "'" << std::endl;
+		std::cout << "char: '" << static_cast<char>(val) << "'" << std::endl; // checar também se deu overflow no char e printar impossible ??
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	std::cout << std::fixed << std::setprecision(1);		
-	std::cout << "int: " << static_cast<int>(val) << std::endl;
+	std::cout << "int: " << /* static_cast<int> */(val) << std::endl;
 	std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(val) << std::endl;
 }
