@@ -1,4 +1,4 @@
-NAME		=	satakc 
+NAME		=	mustang_stack 
 
 SRC			=	main.cpp					\
 
