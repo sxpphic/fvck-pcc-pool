@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:22:40 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/09 20:08:35 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/22 10:09:40 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Array {
 		unsigned int size(void) {
 			return (_size);
 		}
-		T& operator[](unsigned int index) { // será q devo receber int ou u_int, já q se eu botar int o cara numca vai acessor todos as casa já q tem u_int de tamanho, mas se eu botar pra receber uint ele acessa tudo mas n posso dar erro se passsar negativo, pq deve converter.
+		T& operator[](unsigned int index) {
 			if (index >= _size)
 				throw std::runtime_error("index out of bounds");
 			return (_dynamic_arr[index]);
