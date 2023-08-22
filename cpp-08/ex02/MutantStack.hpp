@@ -15,35 +15,20 @@
 # include <iostream>
 # include <string>
 # include <stack>
+# include <vector>
 
 template<class T>
-class MutantStack{
+class MutantStack : public std::stack<T> {
 	
 	public:
 		MutantStack();
-		MutantStack(const MutantStack& other);
+	//	MutantStack(const MutantStack& other);
 		~MutantStack();
-		MutantStack& operator=(const MutantStack& other);
-
-		const T&		top() const;
-		bool			empty() const;
-		size_t			size() const;
-		void			push(const T& data);
-		void			pop();
-
-	//	class iterator : public std::iterator<T> {};
-
-	//	iterator	begin() {
-	//		return (_my_deque.begin());
-	//	}
-	//	iterator	end() {
-	//		return (_my_deque.end());
-	//	}
-		
+	//	MutantStack& operator=(const MutantStack& other);
+		void	test(void);
 		
 	private:
-		std::stack<T>	_my_stack;
-		std::deque<T>	_my_deque;
+
 };
 
 #include "MutantStack.tpp"

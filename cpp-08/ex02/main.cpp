@@ -15,19 +15,12 @@
 int main(void) {
 
 	MutantStack<int> noturno;
-	MutantStack<int> aaaaaa;
 
-	noturno.push(1);
 	noturno.push(1);
 	noturno.push(1);
 	noturno.push(1);
 	noturno.push(2);
-
-	for (MutantStack<int>::iterator it = noturno.begin(); it != noturno.end(); it++) {
-		
-	}
-
-
+	noturno.test();
 	
 	return (0);
 }
