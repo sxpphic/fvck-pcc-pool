@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:05:00 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/18 13:09:15 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:35:42 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ AForm* Intern::makeForm(const std::string& form, const std::string& target) {
 			return (new PresidentialPardonForm(target));
 			break;
 		case (3):
-			std::cout << "form does not exist !!!!!!" << std::endl;
+			throw std::runtime_error(target + "form does not exist !!!!!!");
 			break;
 		default:
 			break;
