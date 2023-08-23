@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:09 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/22 09:36:32 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:16:02 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,5 @@ void ScalarConverter::convert(const std::string& num) {
 		default:
 			break;
 	}
-	//std::cout << check_is_valid(num) << std::endl;
 }
 
