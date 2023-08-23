@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:13 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/22 13:54:09 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/23 09:11:46 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@
 class ScalarConverter {
 	
 	public:
-		~ScalarConverter();
-
 		static void convert(const std::string& num);
 
 	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
+		~ScalarConverter();
 		
 		static int 	check_edge_cases(const std::string& str, int type_to_check);
 		static void	int_type(const std::string& str_num);

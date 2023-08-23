@@ -1,9 +1,9 @@
 NAME		=	RPN 
 
 SRC			=	main.cpp					\
+				RPN.cpp						\
 
-HEADERS		= 	MutantStack.hpp				\
-				MutantStack.tpp				\
+HEADERS		= 	RPN.hpp						\
 
 CC			=	c++
 
