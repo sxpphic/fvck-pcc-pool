@@ -5,7 +5,6 @@ SRC			=	main.cpp					\
 #OBJ			=	$(SRC:.cpp=.o)
 
 HEADERS		=	Array.hpp					\
-				Array.tpp					\
 
 CC			=	c++
 
