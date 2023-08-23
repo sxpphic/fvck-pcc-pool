@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:35:09 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/23 12:16:02 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:04:23 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int ScalarConverter::check_edge_cases(const std::string& str, int type_to_check)
 	if (type_to_check == TYPE_FLOAT) {
 		std::string	pseudo_literals_float[4] = {"nanf", "inff", "+inff", "-inff"};
 		
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 4; i++) {
 		if (str == pseudo_literals_float[i])
 			return (TYPE_FLOAT);
 		}
@@ -115,7 +115,7 @@ int ScalarConverter::check_edge_cases(const std::string& str, int type_to_check)
 	else if (type_to_check == TYPE_DOUBLE) {
 		std::string	pseudo_literals_double[4] = {"nan", "inf", "+inf", "-inf"};
 		
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 4; i++) {
 			if (str == pseudo_literals_double[i])
 				return (TYPE_DOUBLE);
 		}
@@ -153,6 +153,7 @@ void ScalarConverter::convert(const std::string& num) {
 	int type;
 
 	type = check_is_valid(num);
+	std::cout << type << std::endl;
 	if (!type)
 		return ;
 	switch (type) {
