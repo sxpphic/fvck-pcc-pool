@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:38:04 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/23 10:17:49 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:40:21 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,18 @@ int rpn(const std::string& input) {
 		} else if (is_number(word)) {
 			int num = atoi(word.c_str());
 			if (num >= 10) {
-				std::cout << "invalid input !!" << std::endl;
+				std::cout << "Error" << std::endl;
 				exit(0);
 			}
 			rpn_stack.push(num);
 		} else {
-			std::cout << "invalid input !!" << std::endl;
+			std::cout << "Error" << std::endl;
 			exit(0); // return ou exit ? exit n limpa;
 		}
 	}
 	if (rpn_stack.size() == 1)
 		std::cout << rpn_stack.top() << std::endl;
 	else
-		std::cout << "invalid input !!!" << std::endl;
+		std::cout << "Error" << std::endl;
 	return (0);
 }
