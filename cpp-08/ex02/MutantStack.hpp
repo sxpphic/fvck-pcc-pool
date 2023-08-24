@@ -22,13 +22,15 @@ class MutantStack : public std::stack<T> {
 	
 	public:
 		MutantStack();
-	//	MutantStack(const MutantStack& other);
+		MutantStack(const MutantStack& other);
 		~MutantStack();
-	//	MutantStack& operator=(const MutantStack& other);
-		void	test(void);
+		MutantStack& operator=(const MutantStack& other);
+
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator	begin(void);
+		iterator	end(void );
 		
 	private:
-		
 
 };
 

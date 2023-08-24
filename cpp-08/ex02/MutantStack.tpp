@@ -14,28 +14,37 @@
 
 template<class T>
 MutantStack<T>::MutantStack() {}
-/*
+
 template<class T>
-MutantStack<T>::MutantStack(const MutantStack& other) {
+MutantStack<T>::MutantStack(const MutantStack& other) : std::stack<T>(other) {
+	(void)other;
 }
-*/
+
 template<class T>
 MutantStack<T>::~MutantStack() {}
 
 //getters 🫳
 
 // overloads 💯
-/*
+
 template<class T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack& other) {
 	if (this == &other)
 		return (*this);
+	this = other;
 	return (*this);
-}*/
+}
 
 // methods
 
-template<class T>
-void	MutantStack<T>::test(void) {
-	
+template <class T>
+typename MutantStack<T>::iterator	MutantStack< T >::begin(void)
+{
+	return (std::stack<T>::c.begin());
+}
+
+template < class T >
+typename MutantStack<T>::iterator	MutantStack< T >::end(void)
+{
+	return (std::stack< T >::c.end());
 }
