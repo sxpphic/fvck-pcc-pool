@@ -1,13 +1,13 @@
 NAME		=	btc 
 
 SRC			=	main.cpp					\
+				BitcoinExchange.cpp			\
 
-HEADERS		= 	MutantStack.hpp				\
-				MutantStack.tpp				\
+HEADERS		= 	BitcoinExchange.hpp			\
 
 CC			=	c++
 
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 RM			= rm -f
 

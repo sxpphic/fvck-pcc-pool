@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 14:09:10 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/25 09:11:26 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/25 14:42:43 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main()
 	mstack.push(737);
 	mstack.push(0);
 	
+	mstack.test();
+
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
