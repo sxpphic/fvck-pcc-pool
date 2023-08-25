@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 11:11:54 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/18 13:49:17 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/25 08:36:25 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ class Span {
 		Span& operator=(const Span& other);
 
 		void 	check_conditions();
-
 		void 	addNumber(int num);
 		int		shortestSpan();
-		int		longestSpan();
-
-
-		
+		int		longestSpan();		
 		void	addRange(int start, int end);
 
 		template <typename Iterator>
@@ -42,7 +38,6 @@ class Span {
 				addNumber(*it);
 			}
 		}
-		
 
 	private:
 		std::multiset<int>	_my_set;

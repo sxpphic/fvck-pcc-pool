@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 14:09:10 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/21 10:59:28 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/25 09:11:26 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,16 @@ int main()
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
+	
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+		std::cout << *it << std::endl;
+		++it;
 	}
 	std::stack<int> s(mstack);
-
-
-	MutantStack<int> mstack;
 	return 0;
 }
