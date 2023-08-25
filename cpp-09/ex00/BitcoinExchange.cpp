@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:15:18 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/25 15:21:13 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:53:08 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,18 @@ bool	check_value(const std::string& value) {
 	return (true);
 }
 
-std::vector<btc_price_s>	open_csv(void) {
+std::vector<btc_price_s>	open_file(const std::string& path, char del) {
 	std::vector<btc_price_s> btc_price;
 	(void)btc_price;
 	
-	std::ifstream	file("data.csv");
+	std::ifstream	file(path.c_str());
 
 	if (!file.is_open()) {
-		std::cerr << "cannot open data.csv !!" << std::endl;
+		if (del == ',')
+			std::cerr << "cannot open data.csv !!" << std::endl;
+		else
+			std::cerr << "cannot open input file !!" << std::endl;
+			
 		exit(EXIT_FAILURE); // exit ou return ??
 	}
 
@@ -61,16 +65,18 @@ std::vector<btc_price_s>	open_csv(void) {
 	std::getline(file, line); // remover primeira linha do csv;
 
 	while (std::getline(file, line)) {
-		std::cout << line << std::endl;
 		btc_price_s	entry;
 		std::stringstream	ss(line);
 		std::string			price_str;
 
-		std::getline(ss, entry._date, ',');
+		std::getline(ss, entry._date, del);
 		ss >> entry._price;
 		ss >> price_str;
-		if (!check_date(entry._date) || !check_value(price_str)) {
-			std::cerr << "invalid csv" << std::endl;
+		if (!check_date(entry._date)/*  || !check_value(price_str) */) {
+			if (del == ',')
+				std::cerr << "invalid csv" << std::endl;
+			else
+				std::cerr << "invalid file" << std::endl;
 			exit(EXIT_FAILURE);
 		}
 		btc_price.push_back(entry);

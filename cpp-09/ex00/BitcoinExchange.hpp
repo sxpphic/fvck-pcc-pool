@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:15:13 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/25 15:20:44 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:52:05 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ struct btc_price_s
 bool						is_number(const std::string& str);
 bool						check_date(const std::string& date);
 bool						check_value(const std::string& value);
-std::vector<btc_price_s>	open_csv(void);
-
-
+std::vector<btc_price_s>	open_file(const std::string& path, char del);
 
 #endif
