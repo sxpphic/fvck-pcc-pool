@@ -15,8 +15,6 @@
 
 bool is_number(const std::string& str) {
 	int		dot_counter = 0;
-/* 	if (str.empty())
-		return (false); */
 	int start = (str[0] == '+' || str[0] == '-') ? 1 : 0;
 	for (int i = start; str[i]; i++) {
 		if (!isdigit(str[i])) {
@@ -32,6 +30,16 @@ bool is_number(const std::string& str) {
 }
 
 bool	check_date(const std::string& date, btc_price_s& entry) {
+	if (!isdigit(date[0]))
+         return false;
+	for (int i = 0; date[i]; i++) {
+        if (!isdigit(date[i]) && date[i] != '-') {
+            return false;
+        }
+    }
+	if (!isdigit(date[date.size() - 1]))
+        return false;
+
 	std::tm tm;
 	if (strptime(date.c_str(), "%Y-%m-%d", &tm)) {
 		tm.tm_year += 1900;
@@ -155,6 +163,7 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 		std::stringstream	ss(line);
 		std::string			amount_str;
 		std::string			date_str;
+		std::string			buff;
 
 		std::getline(ss, date_str, '|'); // tratar espaço dps do pipe ??
 		date_str = string_trim(date_str);
@@ -162,12 +171,15 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 		input_entry._amount = atof(amount_str.c_str());
 		if (!check_date(date_str, input_entry) || ss.fail()) {
 			std::cerr << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+		ss >> buff;
+		if (!ss.fail()) {
+			std::cerr << "Error: bad input => " << line << std::endl;
 		} else if (!check_input_value(amount_str)) {}
  		else {
 			std::cout << date_str << " => " << input_entry._amount << " = " << exchange_value(btc_price, input_entry) << std::endl; 
 		}
-
-
 	}
 	file.close();
 
