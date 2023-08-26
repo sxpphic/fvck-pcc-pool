@@ -20,16 +20,21 @@
 # include <fstream>
 # include <sstream>
 # include <cstdlib>
+# include <climits>
 
 struct btc_price_s
 {
-	std::string	_date;
+	std::tm		_date;
 	float		_price;
+	float		_amount;
 };
 
 bool						is_number(const std::string& str);
-bool						check_date(const std::string& date);
+bool						check_date(const std::string& date, btc_price_s& entry);
 bool						check_value(const std::string& value);
-std::vector<btc_price_s>	open_file(const std::string& path, char del);
+bool						check_input_value(const std::string& value);
+std::vector<btc_price_s>	open_file(void);
+void						read_input_file(std::vector<btc_price_s>& btc_price, const std::string& input_path);
+
 
 #endif

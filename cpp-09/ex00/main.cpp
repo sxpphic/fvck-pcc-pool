@@ -15,21 +15,25 @@
 int main(int argc, char** argv) {
 	(void)argc;
 	(void)argv;
-/*  	if (argc != 2) {
-		std::cout << "wrong imput!!" << std::endl;
+  	if (argc != 2) {
+		std::cout << "Error: could not open file." << std::endl;
 		return (0);
-	} */
+	}
 	// checar se o data.csv existe.
 	
 
 	
-	std::vector<btc_price_s> data = open_file("input.txt", '|');
+	std::vector<btc_price_s> data = open_file();
 
-	for (std::vector<btc_price_s>::iterator it = data.begin(); it != data.end(); it++) {
+	read_input_file(data, argv[1]);
+
+/* 	for (std::vector<btc_price_s>::iterator it = data.begin(); it != data.end(); it++) {
 		const btc_price_s&	entry = *it;
 
-		std::cout << entry._date << " - " <<entry._price << std::endl;
-	}
+		std::cout << entry._date.tm_year << "-" << entry._date.tm_mon << "-" << entry._date.tm_mday << " | " <<entry._price << std::endl;
+	} */
+
+
 	
 	return (0);
 }
