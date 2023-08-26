@@ -61,7 +61,7 @@ bool	check_input_value(const std::string& value) {
 		std::cerr << "Error: not a positive number." << std::endl;	
 		return (false);
 	}
-	else if (num >= INT_MAX) {
+	else if (num >= 1000) {
 		std::cerr << "Error: too large a number." << std::endl;	
 		return (false);
 	}
@@ -113,10 +113,8 @@ std::string string_trim(const std::string& str) {
 int compare_date(const std::tm &tm1, const std::tm &tm2) {
     if (tm1.tm_year < tm2.tm_year) return -1;
     if (tm1.tm_year > tm2.tm_year) return 1;
-    
     if (tm1.tm_mon < tm2.tm_mon) return -1;
     if (tm1.tm_mon > tm2.tm_mon) return 1;
-    
     if (tm1.tm_mday < tm2.tm_mday) return -1;
     if (tm1.tm_mday > tm2.tm_mday) return 1;
     
@@ -139,8 +137,6 @@ float	exchange_value(std::vector<btc_price_s>& btc_price, const btc_price_s& inp
 		}
 	}
 	return ((*--btc_price.end())._price * input_entry._amount);
-
-	return (0);
 }
 
 
@@ -164,7 +160,7 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 		ss >> amount_str;
 		input_entry._amount = atof(amount_str.c_str());
 		amount_str = string_trim(amount_str);
-		if (!check_date(date_str, input_entry)) {
+		if (!check_date(date_str, input_entry) || ss.fail()) {
 			std::cerr << "Error: bad input => " << line << std::endl;
 		} else if (!check_input_value(amount_str)) {}
  		else {
