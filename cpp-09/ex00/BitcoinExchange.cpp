@@ -105,9 +105,10 @@ std::string string_trim(const std::string& str) {
     size_t start = str.find_first_not_of(" \t\n\r\f\v");
     size_t end = str.find_last_not_of(" \t\n\r\f\v");
     
-    if (start == std::string::npos)
+    if (start == std::string::npos) {
         return "";
-    return str.substr(start, end - start + 1);
+	}
+	return (str.substr(start, end - start + 1));
 }
 
 int compare_date(const std::tm &tm1, const std::tm &tm2) {
@@ -155,11 +156,10 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 		std::string			amount_str;
 		std::string			date_str;
 
-		std::getline(ss, date_str, '|');
+		std::getline(ss, date_str, '|'); // tratar espaço dps do pipe ??
 		date_str = string_trim(date_str);
 		ss >> amount_str;
 		input_entry._amount = atof(amount_str.c_str());
-		amount_str = string_trim(amount_str);
 		if (!check_date(date_str, input_entry) || ss.fail()) {
 			std::cerr << "Error: bad input => " << line << std::endl;
 		} else if (!check_input_value(amount_str)) {}
