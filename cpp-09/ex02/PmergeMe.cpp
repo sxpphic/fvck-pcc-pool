@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:42:07 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/21 11:42:15 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 09:04:05 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,8 @@ void mergeLists(std::list<int>& result, std::list<int>& left, std::list<int>& ri
 }
 
 void mergeInsertionSort(std::list<int>& arr) {
-    if (arr.size() <= 1) {
+    if (arr.size() <= THRESHOLD) {
+        insertionSort(arr);
         return;
     }
     
@@ -126,8 +127,8 @@ void mergeInsertionSort(std::list<int>& arr) {
     }
     right = arr;
     
-    insertionSort(left);
-    insertionSort(right);
+    mergeInsertionSort(left);
+    mergeInsertionSort(right);
     
     arr.clear();
     mergeLists(arr, left, right);
@@ -196,7 +197,8 @@ void deque_mergeLists(std::deque<int>& result, std::deque<int>& left, std::deque
 }
 
 void deque_mergeInsertionSort(std::deque<int>& arr) {
-    if (arr.size() <= 1) {
+    if (arr.size() <= THRESHOLD) {
+        deque_insertionSort(arr);
         return;
     }
     
@@ -207,22 +209,20 @@ void deque_mergeInsertionSort(std::deque<int>& arr) {
         arr.pop_front();
     }
     right = arr;
-    
-    deque_insertionSort(left);
-    deque_insertionSort(right);
+
+    deque_mergeInsertionSort(left);
+    deque_mergeInsertionSort(right);
     
     arr.clear();
     deque_mergeLists(arr, left, right);
 }
 
-
 void	sort_deque(std::deque<int>& deque, char** argv, double& dtime) {
 	clock_t	start = clock();
-
-
+    
 	fill_deque(deque, argv);
 	deque_mergeInsertionSort(deque);
-
+    
 	clock_t	end = clock();
 	dtime = (double)(end - start) / ((double)CLOCKS_PER_SEC /*  / 1000000.0 */ );
 }

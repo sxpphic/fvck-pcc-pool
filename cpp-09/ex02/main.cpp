@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:42:19 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/21 11:42:41 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 08:35:28 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main(int argc, char** argv) {
 		std::cerr << "Error" << std::endl;
 		return (1);
 	}
-	argv++; // andar o nome
-	//print_before(argv);
+	argv++;
+	print_before(argv);
 	sort_list(list, argv, ltime);
 	sort_deque(deque, argv, dtime);
 	print_after(list);

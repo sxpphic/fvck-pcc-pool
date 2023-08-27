@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:41:46 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/21 11:42:03 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 08:54:31 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <unistd.h>
 # include <sys/time.h>
 
+const int 	THRESHOLD = 5;
 
 bool	validate_input(char** argv);
 void	print_before(char** argv);
