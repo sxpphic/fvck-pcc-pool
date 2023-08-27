@@ -1,9 +1,9 @@
-NAME		=	btc 
+NAME		=	PmergeMe 
 
 SRC			=	main.cpp					\
+				PmergeMe.cpp				\
 
-HEADERS		= 	MutantStack.hpp				\
-				MutantStack.tpp				\
+HEADERS		= 	PmergeMe.hpp				\
 
 CC			=	c++
 

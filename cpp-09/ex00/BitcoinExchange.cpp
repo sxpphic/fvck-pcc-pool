@@ -90,6 +90,13 @@ std::vector<btc_price_s>	open_file(void) {
 	std::string line;
 	std::getline(file, line); // remover primeira linha do csv;
 
+	if (line != "date,exchange_rate") {
+		std::cerr << "Error: bad data.csv !!" << std::endl;	
+		exit(EXIT_FAILURE); 
+	}
+
+
+
 	while (std::getline(file, line)) {
 		btc_price_s	entry;
 		std::stringstream	ss(line);
@@ -126,25 +133,28 @@ int compare_date(const std::tm &tm1, const std::tm &tm2) {
     if (tm1.tm_mon > tm2.tm_mon) return 1;
     if (tm1.tm_mday < tm2.tm_mday) return -1;
     if (tm1.tm_mday > tm2.tm_mday) return 1;
-    
     return 0;
 }
 
-float	exchange_value(std::vector<btc_price_s>& btc_price, const btc_price_s& input_entry) {
+float	exchange_value(const std::vector<btc_price_s>& btc_price, const btc_price_s& input_entry) {
 	if (compare_date(btc_price[0]._date, input_entry._date) == 1) {
 		return (0);
 	}
-	for (std::vector<btc_price_s>::iterator it = btc_price.begin(); it != btc_price.end(); it++) {
-		btc_price_s&	item = *it;
+	for (std::vector<btc_price_s>::const_iterator it = btc_price.begin(); it != btc_price.end(); it++) {
+		btc_price_s	item = *it;
+
 		int res = compare_date(item._date, input_entry._date);
 		if (res == 0) {
 			return (item._price * input_entry._amount);
 		}
 		if (res == 1) {
-			item = *--it;
+			it--;
+			item = *it;
 			return (item._price * input_entry._amount);
 		}
 	}
+	std::cerr << "last" << std::endl;	
+
 	return ((*--btc_price.end())._price * input_entry._amount);
 }
 
@@ -154,10 +164,14 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 	std::ifstream	file(input_path.c_str());
 	if (!file.is_open()) {
 		std::cerr << "Error: cannot open input.txt !!" << std::endl;	
-		exit(EXIT_FAILURE); // exit ou return ??
+		exit(EXIT_FAILURE);
 	}
 	std::string line;
-	std::getline(file, line); // remover primeira linha do csv;
+	std::getline(file, line);
+	if (line != "date | value") {
+		std::cerr << "Error: bad input file !!" << std::endl;	
+		exit(EXIT_FAILURE); 
+	}
 	while (std::getline(file, line)) {
 		btc_price_s	input_entry;
 		std::stringstream	ss(line);
@@ -165,7 +179,7 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 		std::string			date_str;
 		std::string			buff;
 
-		std::getline(ss, date_str, '|'); // tratar espaço dps do pipe ??
+		std::getline(ss, date_str, '|');
 		date_str = string_trim(date_str);
 		ss >> amount_str;
 		input_entry._amount = atof(amount_str.c_str());

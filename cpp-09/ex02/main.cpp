@@ -13,5 +13,18 @@
 #include "PmergeMe.hpp"
 
 int main(int argc, char** argv) {
+	std::list<int>	list;
+	float	ltime;
+//	float	dtime;
+	if (!validate_input(argv) || argc == 1) {
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	argv++; // andar o nome
+	print_before(argv);
+	sort_list(list, argv, ltime);
+	//sort_deque(argv, dtime);
+	print_after(list);
+
 	return (0);
 }
