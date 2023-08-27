@@ -14,17 +14,21 @@
 
 int main(int argc, char** argv) {
 	std::list<int>	list;
-	float	ltime;
-//	float	dtime;
+	std::deque<int>	deque;
+	double	ltime;
+	double	dtime;
 	if (!validate_input(argv) || argc == 1) {
 		std::cerr << "Error" << std::endl;
 		return (1);
 	}
 	argv++; // andar o nome
-	print_before(argv);
+	//print_before(argv);
 	sort_list(list, argv, ltime);
-	//sort_deque(argv, dtime);
+	sort_deque(deque, argv, dtime);
 	print_after(list);
+	std::cout << std::fixed << std::setprecision(6);
+	std::cout << "Time to process a range of " << list.size() << " elements with std::list " << ltime << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque " << dtime << std::endl;
 
 	return (0);
 }

@@ -18,12 +18,18 @@
 # include <cstdlib>
 # include <list>
 # include <deque>
+# include <ctime>
+# include <algorithm>
+# include <iomanip>
+# include <unistd.h>
+# include <sys/time.h>
 
 
 bool	validate_input(char** argv);
 void	print_before(char** argv);
 void	print_after(const std::list<int>& list);
-void	sort_list(std::list<int>& list, char** argv, float& ltime);
+void	sort_list(std::list<int>& list, char** argv, double& ltime);
+void	sort_deque(std::deque<int>& deque, char** argv, double& dtime);
 void	fill_list(std::list<int>& list, char** argv);
 
 
