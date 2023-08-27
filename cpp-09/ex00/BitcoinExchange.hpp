@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:15:13 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/25 15:52:05 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 08:33:08 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ bool						check_value(const std::string& value);
 bool						check_input_value(const std::string& value);
 std::vector<btc_price_s>	open_file(void);
 void						read_input_file(std::vector<btc_price_s>& btc_price, const std::string& input_path);
-
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:15:18 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/25 15:53:08 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 08:30:03 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
 
 bool is_number(const std::string& str) {
 	int		dot_counter = 0;
@@ -84,18 +83,16 @@ std::vector<btc_price_s>	open_file(void) {
 
 	if (!file.is_open()) {
 		std::cerr << "Error: cannot open data.csv !!" << std::endl;	
-		exit(EXIT_FAILURE); // exit ou return ??
+		exit(EXIT_FAILURE);
 	}
 
 	std::string line;
-	std::getline(file, line); // remover primeira linha do csv;
+	std::getline(file, line);
 
 	if (line != "date,exchange_rate") {
 		std::cerr << "Error: bad data.csv !!" << std::endl;	
 		exit(EXIT_FAILURE); 
 	}
-
-
 
 	while (std::getline(file, line)) {
 		btc_price_s	entry;
