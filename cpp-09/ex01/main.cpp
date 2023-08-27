@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:35:35 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/23 09:54:31 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 08:34:05 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int main(int argc, char** argv) {
 		std::cerr << "Wrong arguments!" << std::endl;
 		return (0);
 	}
-
 	rpn(argv[1]);
-	
 	return (0);
 }

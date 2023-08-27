@@ -6,7 +6,7 @@
 /*   By: vipereir <vipereir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:42:19 by vipereir          #+#    #+#             */
-/*   Updated: 2023/08/27 08:35:28 by vipereir         ###   ########.fr       */
+/*   Updated: 2023/08/27 10:07:36 by vipereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int main(int argc, char** argv) {
 	sort_deque(deque, argv, dtime);
 	print_after(list);
 	std::cout << std::fixed << std::setprecision(6);
-	std::cout << "Time to process a range of " << list.size() << " elements with std::list " << ltime << std::endl;
-	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque " << dtime << std::endl;
+	std::cout << "Time to process a range of " << list.size() << " elements with std::list " << ltime  << " ms" << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque " << dtime << " ms" << std::endl;
 
 	return (0);
 }
