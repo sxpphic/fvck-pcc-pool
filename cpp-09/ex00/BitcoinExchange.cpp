@@ -53,7 +53,7 @@ bool	check_value(const std::string& value) {
 	if (!is_number(value))
 		return (false);
 	float num = atof(value.c_str());
-	if (num < 0 || num >= INT_MAX)
+	if (num < 0 || num >= (float)INT_MAX)
 		return (false);
 	return (true);
 }
@@ -189,6 +189,7 @@ void	read_input_file( std::vector<btc_price_s>& btc_price, const std::string& in
 			std::cerr << "Error: bad input => " << line << std::endl;
 		} else if (!check_input_value(amount_str)) {}
  		else {
+			std::cout << std::fixed << std::setprecision(8);
 			std::cout << date_str << " => " << input_entry._amount << " = " << exchange_value(btc_price, input_entry) << std::endl; 
 		}
 	}
